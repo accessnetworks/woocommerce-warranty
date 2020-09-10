@@ -92,7 +92,7 @@ class Warranty_Frontend {
 	 * Display the 'Request Warranty' button on the order view page if
 	 * an order contains a product with a valid warranty
 	 *
-	 * @param $order WC_Order object
+	 * @param $order WooCommerce Order Object.
 	 */
 	function show_request_button( $order ) {
 		global $wpdb;
@@ -102,7 +102,7 @@ class Warranty_Frontend {
 		}
 
 		if ( 'completed' === WC_Warranty_Compatibility::get_order_prop( $order, 'status' ) && Warranty_Order::order_has_warranty( $order ) ) {
-			// If there is an existing warranty request, show a different text
+			// If there is an existing warranty request, show a different text.
 			$requests = get_posts(
 				array(
 					'post_type'  => 'warranty_request',
@@ -132,11 +132,11 @@ class Warranty_Frontend {
 	}
 
 	/**
-	 * Display the 'Request Warranty' button on the My Account page
+	 * Display the 'Request Warranty' button on the My Account page.
 	 *
-	 * @param  array    $actions
-	 * @param  WC_Order $order
-	 * @return array $actions
+	 * @param  array    $actions Actions.
+	 * @param  WC_Order $order Order.
+	 * @return array $actions Actions.
 	 */
 	function my_orders_request_button( $actions, $order ) {
 		global $wpdb;
@@ -182,11 +182,11 @@ class Warranty_Frontend {
 	}
 
 	/**
-	 * Add warranty data to all variations
+	 * Add warranty data to all variations.
 	 *
-	 * @param $data
-	 * @param $product
-	 * @param $variation
+	 * @param $data Data.
+	 * @param $product Product.
+	 * @param $variation Variation.
 	 *
 	 * @return mixed
 	 */
@@ -258,7 +258,7 @@ class Warranty_Frontend {
 							}
 						}
 
-						// save the custom forms
+						// Save the custom forms.
 						$result = WooCommerce_Warranty::process_warranty_form( $request_id );
 
 						if ( is_wp_error( $result ) ) {
@@ -266,7 +266,7 @@ class Warranty_Frontend {
 
 							$errors = $result->get_error_messages();
 						} else {
-							// set the initial status and send the emails
+							// Set the initial status and send the emails.
 							warranty_update_status( $request_id, 'new' );
 						}
 
