@@ -6,7 +6,6 @@ if ( ! class_exists( 'WC_Abstract_Privacy' ) ) {
 class Warranty_Privacy extends WC_Abstract_Privacy {
 	/**
 	 * Constructor
-	 *
 	 */
 	public function __construct() {
 		parent::__construct( __( 'Warranty', 'wc_warranty' ) );
@@ -19,8 +18,8 @@ class Warranty_Privacy extends WC_Abstract_Privacy {
 	/**
 	 * Returns a list of warranties.
 	 *
-	 * @param string  $email_address
-	 * @param int     $page
+	 * @param string $email_address
+	 * @param int    $page
 	 *
 	 * @return array WP_Post
 	 */
@@ -40,7 +39,6 @@ class Warranty_Privacy extends WC_Abstract_Privacy {
 
 	/**
 	 * Gets the message of the privacy to display.
-	 *
 	 */
 	public function get_privacy_message() {
 		return wpautop( sprintf( __( 'By using this extension, you may be storing personal data or sharing data with an external service. <a href="%s" target="_blank">Learn more about how this works, including what you may want to include in your privacy policy.</a>', 'wc_warranty' ), 'https://docs.woocommerce.com/privacy/?woocommerce-warranty' ) );
@@ -114,9 +112,9 @@ class Warranty_Privacy extends WC_Abstract_Privacy {
 
 		foreach ( (array) $warranties as $warranty ) {
 			list( $removed, $retained, $msgs ) = $this->maybe_handle_warranty( $warranty );
-			$items_removed  |= $removed;
-			$items_retained |= $retained;
-			$messages        = array_merge( $messages, $msgs );
+			$items_removed                    |= $removed;
+			$items_retained                   |= $retained;
+			$messages                          = array_merge( $messages, $msgs );
 		}
 
 		// Tell core if we have more warranties to work on still

@@ -133,22 +133,22 @@ class WooCommerce_Warranty {
 		return apply_filters(
 			'wc_shipment_tracking_get_providers',
 			array(
-				'Australia' => array(
+				'Australia'      => array(
 					'Australia Post'   => 'http://auspost.com.au/track/track.html?id=%1$s',
 					'Fastway Couriers' => 'http://www.fastway.com.au/courier-services/track-your-parcel?l=%1$s',
 				),
-				'Austria' => array(
+				'Austria'        => array(
 					'post.at' => 'http://www.post.at/sendungsverfolgung.php?pnum1=%1$s',
 					'dhl.at'  => 'http://www.dhl.at/content/at/de/express/sendungsverfolgung.html?brand=DHL&AWB=%1$s',
 					'DPD.at'  => 'https://tracking.dpd.de/parcelstatus?locale=de_AT&query=%1$s',
 				),
-				'Belgium' => array(
+				'Belgium'        => array(
 					'bpost' => 'http://track.bpost.be/etr/light/showSearchPage.do?oss_language=EN',
 				),
-				'Brazil' => array(
+				'Brazil'         => array(
 					'Correios' => 'http://websro.correios.com.br/sro_bin/txect01$.QueryList?P_LINGUA=001&P_TIPO=001&P_COD_UNI=%1$s',
 				),
-				'Canada' => array(
+				'Canada'         => array(
 					'Canada Post' => 'http://www.canadapost.ca/cpotools/apps/track/personal/findByTrackNumber?trackingNumber=%1$s',
 				),
 				'Czech Republic' => array(
@@ -157,54 +157,54 @@ class WooCommerce_Warranty {
 					'DHL.cz'      => 'http://www.dhl.cz/content/cz/cs/express/sledovani_zasilek.shtml?brand=DHL&AWB=%1$s',
 					'DPD.cz'      => 'https://tracking.dpd.de/cgi-bin/delistrack?pknr=%1$s&typ=32&lang=cz',
 				),
-				'Finland' => array(
+				'Finland'        => array(
 					'Itella' => 'http://www.posti.fi/itemtracking/posti/search_by_shipment_id?lang=en&ShipmentId=%1$s',
 				),
-				'France' => array(
+				'France'         => array(
 					'Colissimo' => 'http://www.colissimo.fr/portail_colissimo/suivre.do?language=fr_FR&colispart=%1$s',
 				),
-				'Germany' => array(
+				'Germany'        => array(
 					'DHL Intraship (DE)' => 'http://nolp.dhl.de/nextt-online-public/set_identcodes.do?lang=de&idc=%1$s&rfn=&extendedSearch=true',
 					'Hermes'             => 'https://tracking.hermesworld.com/?TrackID=%1$s',
 					'Deutsche Post DHL'  => 'http://nolp.dhl.de/nextt-online-public/set_identcodes.do?lang=de&idc=%1$s',
 					'UPS Germany'        => 'http://wwwapps.ups.com/WebTracking/processInputRequest?sort_by=status&tracknums_displayed=1&TypeOfInquiryNumber=T&loc=de_DE&InquiryNumber1=%1$s',
 					'DPD.de'             => 'https://tracking.dpd.de/parcelstatus?query=%1$s&locale=en_DE',
 				),
-				'Ireland' => array(
+				'Ireland'        => array(
 					'DPD'     => 'http://www2.dpd.ie/Services/QuickTrack/tabid/222/ConsignmentID/%1$s/Default.aspx',
 					'An Post' => 'https://track.anpost.ie/TrackingResults.aspx?rtt=1&items=%1$s',
 				),
-				'Italy' => array(
+				'Italy'          => array(
 					'BRT (Bartolini)' => 'http://as777.brt.it/vas/sped_det_show.hsm?referer=sped_numspe_par.htm&Nspediz=%1$s',
 					'DHL Express'     => 'http://www.dhl.it/it/express/ricerca.html?AWB=%1$s&brand=DHL',
 				),
-				'India' => array(
+				'India'          => array(
 					'DTDC' => 'http://www.dtdc.in/dtdcTrack/Tracking/consignInfo.asp?strCnno=%1$s',
 				),
-				'Netherlands' => array(
+				'Netherlands'    => array(
 					'PostNL' => 'https://mijnpakket.postnl.nl/Claim?Barcode=%1$s&Postalcode=%2$s&Foreign=False&ShowAnonymousLayover=False&CustomerServiceClaim=False',
 					'DPD.NL' => 'http://track.dpdnl.nl/?parcelnumber=%1$s',
 				),
-				'New Zealand' => array(
+				'New Zealand'    => array(
 					'Courier Post' => 'http://trackandtrace.courierpost.co.nz/Search/%1$s',
 					'NZ Post'      => 'http://www.nzpost.co.nz/tools/tracking?trackid=%1$s',
 					'Fastways'     => 'http://www.fastway.co.nz/courier-services/track-your-parcel?l=%1$s',
 					'PBT Couriers' => 'http://www.pbt.com/nick/results.cfm?ticketNo=%1$s',
 				),
-				'Poland' => array(
+				'Poland'         => array(
 					'InPost'        => 'https://inpost.pl/sledzenie-przesylek?number=%1$s',
 					'DPD.PL'        => 'https://tracktrace.dpd.com.pl/parcelDetails?p1=%1$s',
 					'Poczta Polska' => 'https://emonitoring.poczta-polska.pl/?numer=%1$s',
 				),
-				'Romania' => array(
+				'Romania'        => array(
 					'Fan Courier'   => 'https://www.fancourier.ro/awb-tracking/?xawb=%1$s',
 					'DPD Romania'   => 'https://tracking.dpd.de/parcelstatus?query=%1$s&locale=ro_RO',
 					'Urgent Cargus' => 'https://app.urgentcargus.ro/Private/Tracking.aspx?CodBara=%1$s',
 				),
-				'South African' => array(
+				'South African'  => array(
 					'SAPO' => 'http://sms.postoffice.co.za/TrackingParcels/Parcel.aspx?id=%1$s',
 				),
-				'Sweden' => array(
+				'Sweden'         => array(
 					'Posten AB'   => 'http://www.posten.se/sv/Kundservice/Sidor/Sok-brev-paket.aspx?search=%1$s',
 					'DHL.se'      => 'http://www.dhl.se/content/se/sv/express/godssoekning.shtml?brand=DHL&AWB=%1$s',
 					'Bring.se'    => 'http://tracking.bring.se/tracking.html?q=%1$s',
@@ -225,7 +225,7 @@ class WooCommerce_Warranty {
 	ericSiteIdent=',
 					'UK Mail'                   => 'https://old.ukmail.com/ConsignmentStatus/ConsignmentSearchResults.aspx?SearchType=Reference&SearchString=%1$s',
 				),
-				'United States' => array(
+				'United States'  => array(
 					'Fedex'         => 'http://www.fedex.com/Tracking?action=track&tracknumbers=%1$s',
 					'FedEx Sameday' => 'https://www.fedexsameday.com/fdx_dotracking_ua.aspx?tracknum=%1$s',
 					'OnTrac'        => 'http://www.ontrac.com/trackingdetail.asp?tracking=%1$s',
@@ -267,7 +267,7 @@ class WooCommerce_Warranty {
 	/**
 	 * Helper method to properly format a warranty string (e.g. 5 months)
 	 *
-	 * @param int $duration
+	 * @param int    $duration
 	 * @param string $unit
 	 * @return string Formatted warranty string
 	 */
@@ -311,12 +311,12 @@ class WooCommerce_Warranty {
 	public static function render_warranty_form( $extra_key = '' ) {
 		$defaults = array(
 			'fields' => array(),
-			'inputs' => ''
+			'inputs' => '',
 		);
 		$form     = get_option( 'warranty_form', $defaults );
 		$inputs   = array();
 
-		if (! empty( $form['inputs'] ) ) {
+		if ( ! empty( $form['inputs'] ) ) {
 			$inputs = json_decode( $form['inputs'] );
 		}
 
@@ -437,20 +437,22 @@ class WooCommerce_Warranty {
 		$reasons      = get_option( 'warranty_reason', '' );
 		$reason_array = preg_split( "/(\r\n|\n|\r)/", $reasons );
 
-		if ( ! empty( $reasons ) && ! empty( $reason_array ) ):
-		?>
+		if ( ! empty( $reasons ) && ! empty( $reason_array ) ) :
+			?>
 			<p><?php _e( 'Select reason to request for warranty', 'wc_warranty' ); ?><br/>
 				<select name="warranty_reason">
 					<?php
 					foreach ( $reason_array as $reason ) {
-						if ( empty( $reason ) ) continue;
+						if ( empty( $reason ) ) {
+							continue;
+						}
 						echo '<option value="' . trim( $reason ) . '">' . trim( $reason ) . '</option>';
 					}
 					?>
 				</select>
 			</p>
-		<?php
-		else:
+			<?php
+		else :
 			echo '<input type="hidden" name="warranty_reason" value="" />';
 		endif;
 
@@ -459,7 +461,11 @@ class WooCommerce_Warranty {
 
 		if ( $question ) :
 			?>
-			<p><?php echo $question; ?> <?php if ( 'yes' === $required ) echo '<b>(*)</b>'; ?><br/>
+			<p><?php echo $question; ?> <?php
+			if ( 'yes' === $required ) {
+				echo '<b>(*)</b>';}
+			?>
+				<br/>
 				<textarea style="width:250px;" rows="4" name="warranty_answer" id="warranty_answer"></textarea>
 			</p>
 		<?php endif; ?>
@@ -467,15 +473,20 @@ class WooCommerce_Warranty {
 		<?php
 		$upload = get_option( 'warranty_upload', 'no' );
 
-		if ( 'yes' === $upload ):
+		if ( 'yes' === $upload ) :
 			$title    = get_option( 'warranty_upload_title', 'Upload Attachment' );
 			$required = get_option( 'warranty_require_upload', 'no' );
 			?>
 			<p>
-				<?php echo $title; ?> <?php if ( 'yes' === $required ) echo '<b>(*)</b>'; ?><br/>
+				<?php echo $title; ?> <?php
+				if ( 'yes' === $required ) {
+					echo '<b>(*)</b>';}
+				?>
+					<br/>
 				<input type="file" name="warranty_upload" />
 			</p>
-		<?php endif;
+			<?php
+		endif;
 	}
 
 	/**
@@ -487,7 +498,7 @@ class WooCommerce_Warranty {
 	public static function process_warranty_form( $request_id ) {
 		$defaults = array(
 			'fields' => array(),
-			'inputs' => ''
+			'inputs' => '',
 		);
 		$form     = get_option( 'warranty_form', $defaults );
 		$inputs   = array();
@@ -504,7 +515,7 @@ class WooCommerce_Warranty {
 		foreach ( $inputs as $input ) {
 			$key    = $input->key;
 			$type   = $input->type;
-			$field  = $form['fields'][$key];
+			$field  = $form['fields'][ $key ];
 			$posted = isset( $_POST['wfb-field'] ) ? $_POST['wfb-field'] : array();
 
 			if ( 'paragraph' === $type ) {
@@ -536,10 +547,9 @@ class WooCommerce_Warranty {
 
 					if ( move_uploaded_file( $files['tmp_name'][ $key ], $new_path ) ) {
 						$filename     = wp_unique_filename( $upload_dir['subdir'] . '/', $filename );
-						$data[ $key ] = $upload_dir['subdir'] . '/' .  $filename;
+						$data[ $key ] = $upload_dir['subdir'] . '/' . $filename;
 					}
 				}
-
 			} else {
 				$value    = isset( $posted[ $key ] ) ? $posted[ $key ] : false;
 				$required = isset( $field['required'] ) && 'yes' === $field['required'];
@@ -580,7 +590,7 @@ class WooCommerce_Warranty {
 	 * @return array restricted list of mimes.
 	 */
 	public static function restrict_allowed_mime_types( $mimes ) {
-		$mimes = array (
+		$mimes = array(
 			'jpg|jpeg|jpe'    => 'image/jpeg',
 			'png'             => 'image/png',
 			'gif'             => 'image/gif',
