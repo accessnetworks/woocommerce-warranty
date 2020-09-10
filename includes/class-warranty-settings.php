@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * todo Doc blocks
+ * Warranty Settings.
  */
 class Warranty_Settings {
 	/**
