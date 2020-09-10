@@ -502,7 +502,11 @@ class Warranty_Settings {
 		);
 
 	}
-
+	/**
+	 * [update_warranty_emails description]
+	 * @param  [type] $value [description]
+	 * @return [type]        [description]
+	 */
 	public function update_warranty_emails( $value ) {
 		if ( $value['type'] == 'warranty_emails' ) {
 			$emails = self::get_warranty_emails_from_post();
@@ -510,7 +514,11 @@ class Warranty_Settings {
 			update_option( 'warranty_emails', $emails );
 		}
 	}
-
+	/**
+	 * [update_permissions description]
+	 * @param  [type] $value [description]
+	 * @return [type]        [description]
+	 */
 	public function update_permissions( $value ) {
 		if ( $value['type'] == 'warranty_permissions' ) {
 			$permissions = self::get_warranty_permissions_from_post();
@@ -518,7 +526,11 @@ class Warranty_Settings {
 			update_option( 'warranty_permissions', $permissions );
 		}
 	}
-
+	/**
+	 * [update_multi_status description]
+	 * @param  [type] $value [description]
+	 * @return [type]        [description]
+	 */
 	public function update_multi_status( $value ) {
 		if ( $value['type'] == 'multi_status' ) {
 			$statuses = self::get_multi_status_from_post( $value['id'] );
@@ -526,7 +538,11 @@ class Warranty_Settings {
 			update_option( $value['id'], $statuses );
 		}
 	}
-
+	/**
+	 * [update_form_builder description]
+	 * @param  [type] $value [description]
+	 * @return [type]        [description]
+	 */
 	public function update_form_builder( $value ) {
 		if ( $value['type'] == 'warranty_form_builder' ) {
 			$form = self::get_form_builder_from_post();
@@ -534,7 +550,11 @@ class Warranty_Settings {
 			update_option( 'warranty_form', $form );
 		}
 	}
-
+	/**
+	 * [update_category_warranties description]
+	 * @param  [type] $value [description]
+	 * @return [type]        [description]
+	 */
 	public function update_category_warranties( $value ) {
 		if ( $value['type'] == 'warranty_categories_table' ) {
 			$warranties = self::get_category_warranties_from_post();
@@ -542,7 +562,11 @@ class Warranty_Settings {
 			update_option( 'wc_warranty_categories', $warranties );
 		}
 	}
-
+	/**
+	 * [update_default_addons description]
+	 * @param  [type] $value [description]
+	 * @return [type]        [description]
+	 */
 	public function update_default_addons( $value ) {
 		if ( $value['type'] == 'warranty_addons_table' ) {
 			$addons = self::get_default_addons_from_post();
@@ -550,7 +574,13 @@ class Warranty_Settings {
 			update_option( 'warranty_default_addons', $addons );
 		}
 	}
-
+	/**
+	 * [warranty_emails_posted_value description]
+	 * @param  [type] $value     [description]
+	 * @param  [type] $option    [description]
+	 * @param  [type] $raw_value [description]
+	 * @return [type]            [description]
+	 */
 	public function warranty_emails_posted_value( $value, $option, $raw_value ) {
 		if ( $option['type'] == 'warranty_emails' ) {
 			$value = self::get_warranty_emails_from_post();
@@ -558,7 +588,13 @@ class Warranty_Settings {
 
 		return $value;
 	}
-
+	/**
+	 * [permissions_posted_value description]
+	 * @param  [type] $value     [description]
+	 * @param  [type] $option    [description]
+	 * @param  [type] $raw_value [description]
+	 * @return [type]            [description]
+	 */
 	public function permissions_posted_value( $value, $option, $raw_value ) {
 		if ( $option['type'] == 'warranty_permissions' ) {
 			$value = self::get_warranty_permissions_from_post();
@@ -566,7 +602,13 @@ class Warranty_Settings {
 
 		return $value;
 	}
-
+	/**
+	 * [multi_status_posted_value description]
+	 * @param  [type] $value     [description]
+	 * @param  [type] $option    [description]
+	 * @param  [type] $raw_value [description]
+	 * @return [type]            [description]
+	 */
 	public function multi_status_posted_value( $value, $option, $raw_value ) {
 		if ( $option['type'] == 'multi_status' ) {
 			$value = self::get_multi_status_from_post( $option['id'] );
@@ -574,7 +616,13 @@ class Warranty_Settings {
 
 		return $value;
 	}
-
+	/**
+	 * [form_builder_posted_value description]
+	 * @param  [type] $value     [description]
+	 * @param  [type] $option    [description]
+	 * @param  [type] $raw_value [description]
+	 * @return [type]            [description]
+	 */
 	public function form_builder_posted_value( $value, $option, $raw_value ) {
 		if ( $option['type'] == 'warranty_form_builder' ) {
 			$value = self::get_form_builder_from_post();
@@ -582,7 +630,13 @@ class Warranty_Settings {
 
 		return $value;
 	}
-
+	/**
+	 * [default_addons_posted_value description]
+	 * @param  [type] $value     [description]
+	 * @param  [type] $option    [description]
+	 * @param  [type] $raw_value [description]
+	 * @return [type]            [description]
+	 */
 	public function default_addons_posted_value( $value, $option, $raw_value ) {
 		if ( $option['type'] == 'warranty_addons_table' ) {
 			$value = self::get_default_addons_from_post();
@@ -590,7 +644,11 @@ class Warranty_Settings {
 
 		return $value;
 	}
-
+	/**
+	 * [warranty_emails_table description]
+	 * @param  [type] $value [description]
+	 * @return [type]        [description]
+	 */
 	public function warranty_emails_table( $value ) {
 		$all_statuses  = warranty_get_statuses();
 		$default_slugs = get_option( 'wc_warranty_default_slugs' );
@@ -618,7 +676,11 @@ class Warranty_Settings {
 
 		include WooCommerce_Warranty::$base_path . '/templates/settings/warranty-emails-table.php';
 	}
-
+	/**
+	 * [warranty_multi_status_field description]
+	 * @param  [type] $value [description]
+	 * @return [type]        [description]
+	 */
 	public function warranty_multi_status_field( $value ) {
 		global $woocommerce;
 
@@ -686,7 +748,11 @@ class Warranty_Settings {
 
 		include WooCommerce_Warranty::$base_path . '/templates/settings/multi-status-field.php';
 	}
-
+	/**
+	 * [form_builder description]
+	 * @param  [type] $value [description]
+	 * @return [type]        [description]
+	 */
 	public function form_builder( $value ) {
 		global $woocommerce;
 
@@ -726,7 +792,11 @@ class Warranty_Settings {
 
 		include WooCommerce_Warranty::$base_path . '/templates/settings/form-builder.php';
 	}
-
+	/**
+	 * [permissions_table description]
+	 * @param  [type] $value [description]
+	 * @return [type]        [description]
+	 */
 	public function permissions_table( $value ) {
 		$all_statuses        = warranty_get_statuses();
 		$managers            = get_users( array( 'role' => 'shop_manager' ) );
@@ -736,14 +806,22 @@ class Warranty_Settings {
 
 		include WooCommerce_Warranty::$base_path . '/templates/settings/permissions-table.php';
 	}
-
+	/**
+	 * [warranty_addons_table description]
+	 * @param  [type] $value [description]
+	 * @return [type]        [description]
+	 */
 	public function warranty_addons_table( $value ) {
 		$currency = get_woocommerce_currency_symbol();
 		$addons   = get_option( 'warranty_default_addons', array() );
 
 		include WooCommerce_Warranty::$base_path . '/templates/settings/addons-table.php';
 	}
-
+	/**
+	 * [warranty_categories_table description]
+	 * @param  [type] $value [description]
+	 * @return [type]        [description]
+	 */
 	public function warranty_categories_table( $value ) {
 		$currency   = get_woocommerce_currency_symbol();
 		$categories = get_terms( 'product_cat', array( 'hide_empty' => false ) );
@@ -862,7 +940,11 @@ class Warranty_Settings {
 			WC()->add_inline_js( $js );
 		}
 	}
-
+	/**
+	 * [warranty_logo_field description]
+	 * @param  [type] $value [description]
+	 * @return [type]        [description]
+	 */
 	public function warranty_logo_field( $value ) {
 		$type         = 'text';
 		$option_value = WC_Admin_Settings::get_option( $value['id'], $value['default'] );
@@ -917,7 +999,10 @@ class Warranty_Settings {
               });";
 		wc_enqueue_js( $js );
 	}
-
+	/**
+	 * [get_warranty_emails_from_post description]
+	 * @return [type] [description]
+	 */
 	public static function get_warranty_emails_from_post() {
 		$_POST            = array_map( 'stripslashes_deep', $_POST );
 		$triggers         = ( isset( $_POST['trigger'] ) ) ? $_POST['trigger'] : array();
@@ -959,7 +1044,10 @@ class Warranty_Settings {
 
 		return $emails;
 	}
-
+	/**
+	 * [get_warranty_permissions_from_post description]
+	 * @return [type] [description]
+	 */
 	public static function get_warranty_permissions_from_post() {
 		$statuses    = warranty_get_statuses();
 		$users       = isset( $_POST['permission'] ) ? $_POST['permission'] : array();

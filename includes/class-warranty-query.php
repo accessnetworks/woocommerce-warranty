@@ -1,7 +1,12 @@
 <?php
 
+/**
+ * [Warranty_Query description]
+ */
 class Warranty_Query {
-
+	/**
+	 * [__construct description]
+	 */
 	public function __construct() {
 		add_filter( 'posts_join', array( $this, 'posts_join' ), 10, 2 );
 		add_filter( 'posts_where', array( $this, 'posts_where' ), 10, 2 );

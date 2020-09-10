@@ -2,7 +2,9 @@
 if ( ! class_exists( 'WC_Abstract_Privacy' ) ) {
 	return;
 }
-
+/**
+ * [Warranty_Privacy description]
+ */
 class Warranty_Privacy extends WC_Abstract_Privacy {
 	/**
 	 * Constructor

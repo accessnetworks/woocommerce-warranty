@@ -3,9 +3,13 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-
+/**
+ * [Warranty_Order description]
+ */
 class Warranty_Order {
-
+	/**
+	 * [__construct description]
+	 */
 	public function __construct() {
 		// Initialize order meta. Need to be called after plugins_loaded because of WC_VERSION check.
 		add_action( 'plugins_loaded', array( $this, 'init_order_meta' ), 20 );

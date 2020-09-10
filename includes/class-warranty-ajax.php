@@ -548,7 +548,10 @@ class Warranty_Ajax {
 			)
 		);
 	}
-
+	/**
+	 * [update_category_defaults description]
+	 * @return [type] [description]
+	 */
 	public static function update_category_defaults() {
 		$warranties = Warranty_Settings::get_category_warranties_from_post();
 		update_option( 'wc_warranty_categories', $warranties );
