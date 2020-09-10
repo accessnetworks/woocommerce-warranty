@@ -3,7 +3,7 @@
 
 	<h2><?php _e( 'New Warranty Request', 'wc_warranty' ); ?></h2>
 
-	<div id="search_form" 
+	<div id="search_form"
 	<?php
 	if ( $searched || $form_view ) {
 		echo 'style="display:none;"';}
@@ -129,38 +129,38 @@ endif;
 ?>
 	<script type="text/javascript">
 	jQuery(document).ready(function($) {
-		$(".toggle_search_form").click(function() {
-			if ( $("#search_form").is(":visible") ) {
-				$(this).val("Show Search Form");
-				$("#search_form").hide();
+		jQuery(".toggle_search_form").click(function() {
+			if ( jQuery("#search_form").is(":visible") ) {
+				jQuery(this).val("Show Search Form");
+				jQuery("#search_form").hide();
 			} else {
-				$(this).val("Hide Search Form");
-				$("#search_form").show();
+				jQuery(this).val("Hide Search Form");
+				jQuery("#search_form").show();
 			}
 		});
 
-		$("#search_key").change(function() {
-			if ($(this).val() == "order_id") {
-				$("#search_term").show();
-				$(".select2-container").hide();
-				$("#select2_search_term")
+		jQuery("#search_key").change(function() {
+			if (jQuery(this).val() == "order_id") {
+				jQuery("#search_term").show();
+				jQuery(".select2-container").hide();
+				jQuery("#select2_search_term")
 					.removeClass("wc-user-search")
 					.removeClass("enhanced")
 					.select2("destroy");
 			} else {
-				$("#search_term").hide();
-				$(".select2-container").show();
-				$("#select2_search_term").addClass("wc-user-search");
-				$("body").trigger("wc-enhanced-select-init");
-				$(".select2-container").attr('style', 'width: 400px; display: inline-block !important;');
+				jQuery("#search_term").hide();
+				jQuery(".select2-container").show();
+				jQuery("#select2_search_term").addClass("wc-user-search");
+				jQuery("body").trigger("wc-enhanced-select-init");
+				jQuery(".select2-container").attr('style', 'width: 400px; display: inline-block !important;');
 			}
 		}).change();
 
-		$(".help_tip").tipTip();
+		jQuery(".help_tip").tipTip();
 
-		$("#search_form").submit(function() {
-			if ( $("#search_key").val() == "customer" ) {
-				$("#search_term").val( $("#select2_search_term").val() );
+		jQuery("#search_form").submit(function() {
+			if ( jQuery("#search_key").val() == "customer" ) {
+				jQuery("#search_term").val( jQuery("#select2_search_term").val() );
 			}
 		});
 	});
