@@ -1,6 +1,9 @@
 /*global wc_enhanced_select_params, user_email_search */
 jQuery( function( $ ) {
-
+    /**
+     * [getEnhancedSelectFormatString description]
+     * @return {[type]} [description]
+     */
     function getEnhancedSelectFormatString() {
         var formatString = {
             noResults: function() {
@@ -43,15 +46,15 @@ jQuery( function( $ ) {
         };
     }
 
-    $( 'body' )
+    jQuery( 'body' )
 
         .on( 'wc-enhanced-select-init', function() {
 
-            $( '.wc-user-search' ).filter( ':not(.enhanced)' ).each( function() {
+            jQuery( '.wc-user-search' ).filter( ':not(.enhanced)' ).each( function() {
                 var select2_args = {
-                    allowClear:  $( this ).data( 'allow_clear' ) ? true : false,
-                    placeholder: $( this ).data( 'placeholder' ),
-                    minimumInputLength: $( this ).data( 'minimum_input_length' ) ? $( this ).data( 'minimum_input_length' ) : '3',
+                    allowClear:  jQuery( this ).data( 'allow_clear' ) ? true : false,
+                    placeholder: jQuery( this ).data( 'placeholder' ),
+                    minimumInputLength: jQuery( this ).data( 'minimum_input_length' ) ? jQuery( this ).data( 'minimum_input_length' ) : '3',
                     escapeMarkup: function( m ) {
                         return m;
                     },
@@ -62,7 +65,7 @@ jQuery( function( $ ) {
                         data: function( term, page ) {
                             return {
                                 term:     term.term,
-                                action:   $( this ).data( 'action' ) || 'warranty_user_search',
+                                action:   jQuery( this ).data( 'action' ) || 'warranty_user_search',
                                 security: wc_enhanced_select_params.search_customers_nonce
                             };
                         },
@@ -81,15 +84,15 @@ jQuery( function( $ ) {
 
                 select2_args = $.extend( select2_args, getEnhancedSelectFormatString() );
 
-                $( this ).selectWoo( select2_args ).addClass( 'enhanced' );
+                jQuery( this ).selectWoo( select2_args ).addClass( 'enhanced' );
             } );
 
-            $( '.email-search-select' ).filter( ':not(.enhanced)' ).each( function() {
+            jQuery( '.email-search-select' ).filter( ':not(.enhanced)' ).each( function() {
                 var select2_args = {
-                    allowClear:         $( this ).data( 'allow_clear' ) ? true : false,
-                    placeholder:        $( this ).data( 'placeholder' ),
+                    allowClear:         jQuery( this ).data( 'allow_clear' ) ? true : false,
+                    placeholder:        jQuery( this ).data( 'placeholder' ),
                     dropdownAutoWidth:  'true',
-                    minimumInputLength: $( this ).data( 'minimum_input_length' ) ? $( this ).data( 'minimum_input_length' ) : '3',
+                    minimumInputLength: jQuery( this ).data( 'minimum_input_length' ) ? jQuery( this ).data( 'minimum_input_length' ) : '3',
                     escapeMarkup: function( m ) {
                         return m;
                     },
@@ -100,7 +103,7 @@ jQuery( function( $ ) {
                         data: function( term, page ) {
                             return {
                                 term:   term.term,
-                                action: $( this ).data( 'action' ) || 'warranty_search_for_email'
+                                action: jQuery( this ).data( 'action' ) || 'warranty_search_for_email'
                             };
                         },
                         processResults: function( data, page ) {
@@ -116,7 +119,7 @@ jQuery( function( $ ) {
                     }
                 };
 
-                $( this ).selectWoo( select2_args ).addClass( 'enhanced' );
+                jQuery( this ).selectWoo( select2_args ).addClass( 'enhanced' );
             } );
         } )
 

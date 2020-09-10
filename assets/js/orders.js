@@ -1,29 +1,29 @@
 jQuery(document).ready(function($) {
-    $("#the-list").on("click", "a.inline-rma", function(e) {
+    jQuery("#the-list").on("click", "a.inline-rma", function(e) {
         e.preventDefault();
 
-        var tr = $(this).closest("tr");
+        var tr = jQuery(this).closest("tr");
         var id = tr.attr("id");
 
-        if ( $("#the-list #inline-edit-"+id).length > 0 ) {
+        if ( jQuery("#the-list #inline-edit-"+id).length > 0 ) {
             // close it
-            $("#the-list #inline-edit-"+ id).find(".close_tr").click();
+            jQuery("#the-list #inline-edit-"+ id).find(".close_tr").click();
         } else {
             remove_inline_edit_rows();
             insert_inline_row( id );
         }
     });
 
-    $("#the-list").on("click", ".close_tr", function() {
-        $(this).parents("tr").remove();
-        $("#the-list").find("tr.hidden").remove();
+    jQuery("#the-list").on("click", ".close_tr", function() {
+        jQuery(this).parents("tr").remove();
+        jQuery("#the-list").find("tr.hidden").remove();
     });
 
     // RMA Update
-    $("#the-list").on("click", ".rma-update", function() {
-        var request = $(this).parents(".warranty-request")
+    jQuery("#the-list").on("click", ".rma-update", function() {
+        var request = jQuery(this).parents(".warranty-request")
         var inputs  = request.find("input,select,textarea");
-        var data    = $(inputs).serializeArray();
+        var data    = jQuery(inputs).serializeArray();
 
         data.push({
             name: "action",
@@ -31,11 +31,11 @@ jQuery(document).ready(function($) {
         });
         data.push({
             name: "id",
-            value: $(this).data("id")
+            value: jQuery(this).data("id")
         });
         data.push({
             name: "_wpnonce",
-            value: $(this).data("security")
+            value: jQuery(this).data("security")
         });
 
         request.block({
@@ -49,7 +49,7 @@ jQuery(document).ready(function($) {
         $.post(
             ajaxurl, data, function(resp) {
                 if ( resp.status == 'OK' ) {
-                    var status_block = $(request).find(".warranty-update-message");
+                    var status_block = jQuery(request).find(".warranty-update-message");
                     status_block.find("p").html( resp.message );
                     status_block.show();
                     request.find(".actions-block").html( resp.actions );
@@ -65,16 +65,16 @@ jQuery(document).ready(function($) {
     // Uploading files
     var file_frame;
 
-    $("#the-list").on("click", ".rma-upload-button", function( event ) {
+    jQuery("#the-list").on("click", ".rma-upload-button", function( event ) {
         event.preventDefault();
 
-        var btn = $(this);
+        var btn = jQuery(this);
 
         // Create the media frame.
         file_frame = wp.media.frames.file_frame = wp.media({
-            title: $( this ).data( 'uploader_title' ),
+            title: jQuery( this ).data( 'uploader_title' ),
             button: {
-                text: $( this ).data( 'uploader_button_text' ),
+                text: jQuery( this ).data( 'uploader_button_text' ),
             },
             multiple: false  // Set to true to allow multiple files to be selected
         });
@@ -85,8 +85,8 @@ jQuery(document).ready(function($) {
             attachment = file_frame.state().get('selection').first().toJSON();
 
             var request_id = btn.data("id");
-            $("#shipping_label_"+ request_id).val( attachment.url );
-            $("#shipping_label_id_"+ request_id).val( attachment.id );
+            jQuery("#shipping_label_"+ request_id).val( attachment.url );
+            jQuery("#shipping_label_id_"+ request_id).val( attachment.id );
         });
 
         // Finally, open the modal
@@ -94,8 +94,8 @@ jQuery(document).ready(function($) {
     });
 
     // Handle RMA Delete requests
-    $("#the-list").on("click", ".warranty-trash", function() {
-        var request = $(this).closest(".warranty-request");
+    jQuery("#the-list").on("click", ".warranty-trash", function() {
+        var request = jQuery(this).closest(".warranty-request");
 
         request.block({
             message: null,
@@ -109,8 +109,8 @@ jQuery(document).ready(function($) {
             ajaxurl,
             {
                 action: "warranty_delete_request",
-                id: $(this).data("id"),
-                _wpnonce: $(this).data("security")
+                id: jQuery(this).data("id"),
+                _wpnonce: jQuery(this).data("security")
             },
             function() {
                 request
@@ -121,17 +121,17 @@ jQuery(document).ready(function($) {
     });
 
     // Send Coupon
-    $("#the-list").on("click", ".warranty-item-coupon", function() {
-        var id = $(this).data("id");
+    jQuery("#the-list").on("click", ".warranty-item-coupon", function() {
+        var id = jQuery(this).data("id");
         tb_show( 'Coupon', '#TB_inline?width=400&height=250&inlineId=warranty-coupon-modal-'+ id );
     });
 
-    $("body").on("click", ".warranty-process-coupon", function() {
-        var btn         = $(this);
-        var request     = $(this).closest(".warranty-request");
-        var amount      = $(this).parents("#TB_window").find("input.amount").val();
-        var id          = $(this).data("id");
-        var security    = $(this).data("security");
+    jQuery("body").on("click", ".warranty-process-coupon", function() {
+        var btn         = jQuery(this);
+        var request     = jQuery(this).closest(".warranty-request");
+        var amount      = jQuery(this).parents("#TB_window").find("input.amount").val();
+        var id          = jQuery(this).data("id");
+        var security    = jQuery(this).data("security");
 
         tb_remove();
 
@@ -148,9 +148,9 @@ jQuery(document).ready(function($) {
             {
                 action: "warranty_send_coupon",
                 ajax: true,
-                id: $(this).data("id"),
+                id: jQuery(this).data("id"),
                 amount: amount,
-                _wpnonce: $(this).data("security")
+                _wpnonce: jQuery(this).data("security")
             },
             function(resp) {
                 if ( resp.status == 'OK' ) {
@@ -164,16 +164,16 @@ jQuery(document).ready(function($) {
     });
 
     // Refund
-    $("#the-list").on("click", ".warranty-item-refund", function() {
-        var id = $(this).data("id");
+    jQuery("#the-list").on("click", ".warranty-item-refund", function() {
+        var id = jQuery(this).data("id");
         tb_show( 'Refund', '#TB_inline?width=400&height=250&inlineId=warranty-refund-modal-'+ id );
     });
 
-    $("body").on("click", ".warranty-process-refund", function() {
-        var id          = $(this).data("id");
-        var security    = $(this).data("security");
-        var request     = $("#warranty_request_"+ id);
-        var amount      = $(this).parents("#TB_window").find("input.amount").val();
+    jQuery("body").on("click", ".warranty-process-refund", function() {
+        var id          = jQuery(this).data("id");
+        var security    = jQuery(this).data("security");
+        var request     = jQuery("#warranty_request_"+ id);
+        var amount      = jQuery(this).parents("#TB_window").find("input.amount").val();
 
         tb_remove();
 
@@ -190,7 +190,7 @@ jQuery(document).ready(function($) {
             {
                 action: "warranty_refund_item",
                 ajax: true,
-                id: $(this).data("id"),
+                id: jQuery(this).data("id"),
                 amount: amount,
                 _wpnonce: security
             },
@@ -207,11 +207,11 @@ jQuery(document).ready(function($) {
     });
 
     // Return
-    $("#the-list").on("click", ".warranty-inventory-return", function() {
-        var btn         = $(this);
-        var request     = $(this).closest(".warranty-request");
-        var id          = $(this).data("id");
-        var security    = $(this).data("security");
+    jQuery("#the-list").on("click", ".warranty-inventory-return", function() {
+        var btn         = jQuery(this);
+        var request     = jQuery(this).closest(".warranty-request");
+        var id          = jQuery(this).data("id");
+        var security    = jQuery(this).data("security");
 
         request.block({
             message: null,
@@ -226,13 +226,13 @@ jQuery(document).ready(function($) {
             {
                 action: "warranty_return_inventory",
                 ajax: true,
-                id: $(this).data("id"),
-                _wpnonce: $(this).data("security")
+                id: jQuery(this).data("id"),
+                _wpnonce: jQuery(this).data("security")
             },
             function(resp) {
                 if ( resp.status == 'OK' ) {
-                    $("#warranty_update_message p").html( resp.message );
-                    $("#warranty_update_message").show();
+                    jQuery("#warranty_update_message p").html( resp.message );
+                    jQuery("#warranty_update_message").show();
                     btn
                         .val("Stock returned")
                         .attr("disabled", true);
@@ -245,17 +245,17 @@ jQuery(document).ready(function($) {
     });
 
     var insert_inline_row = function( source_id ) {
-        var cloned = $("#inline-edit-"+ source_id).clone();
-        var source = $("#"+ source_id);
+        var cloned = jQuery("#inline-edit-"+ source_id).clone();
+        var source = jQuery("#"+ source_id);
 
         cloned
             .insertAfter(source)
             .show();
-        $("<tr class='hidden'></tr>").insertBefore(cloned);
+        jQuery("<tr class='hidden'></tr>").insertBefore(cloned);
     }
 
     var remove_inline_edit_rows = function() {
-        $("#the-list tr.hidden").remove();
-        $("#the-list tr.inline-edit-row").remove();
+        jQuery("#the-list tr.hidden").remove();
+        jQuery("#the-list tr.inline-edit-row").remove();
     }
 });

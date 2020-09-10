@@ -56,7 +56,10 @@ jQuery(document).ready(function($) {
             }
         );
     })();
-
+    /**
+     * [update_data description]
+     * @return {[type]} [description]
+     */
     function update_data() {
         var params = {
             "action"            : ajax_endpoint,
@@ -94,15 +97,26 @@ jQuery(document).ready(function($) {
         });
 
     }
-
+    /**
+     * [update_completed description]
+     * @return {[type]} [description]
+     */
     function update_completed() {
         updating_complete();
     }
-
+    /**
+     * [update_progressbar description]
+     * @param  {[type]} value [description]
+     * @return {[type]}       [description]
+     */
     function update_progressbar( value ) {
         progressbar.progressbar( "value", Math.ceil(value) );
     }
-
+    /**
+     * [log_import_data description]
+     * @param  {[type]} data [description]
+     * @return {[type]}      [description]
+     */
     function log_import_data( data ) {
         for ( var x = 0; x < data.length; x++ ) {
             var row;
@@ -121,7 +135,10 @@ jQuery(document).ready(function($) {
 
         }
     }
-
+    /**
+     * [updating_complete description]
+     * @return {[type]} [description]
+     */
     function updating_complete() {
         update_progressbar( 100 );
         if ( $("#log").find("a.return_link").length === 0 ) {

@@ -1,7 +1,7 @@
 jQuery(document).ready(function($) {
-    $("input[name=variation_id]").change(function() {
-        var variations      = $(".variations_form").data("product_variations");
-        var variation_id    = $("input[name=variation_id]").val();
+    jQuery("input[name=variation_id]").change(function() {
+        var variations      = jQuery(".variations_form").data("product_variations");
+        var variation_id    = jQuery("input[name=variation_id]").val();
 
         for ( var x = 0; x < variations.length; x++ ) {
 
@@ -14,9 +14,9 @@ jQuery(document).ready(function($) {
                             var value      = variation._warranty.value;
                             var duration   = WC_Warranty.durations[ variation._warranty.duration ];
 
-                            $(".warranty_info").html("<b>"+ variation._warranty_label +":</b> "+ value +" "+ duration );
+                            jQuery(".warranty_info").html("<b>"+ variation._warranty_label +":</b> "+ value +" "+ duration );
                         } else {
-                            $(".warranty_info").html("<b>"+ variation._warranty_label +":</b> "+ WC_Warranty.lifetime );
+                            jQuery(".warranty_info").html("<b>"+ variation._warranty_label +":</b> "+ WC_Warranty.lifetime );
                         }
                     } else if ( variation._warranty.type == "addon_warranty" ) {
                         var addons = variation._warranty.addons;
@@ -46,14 +46,14 @@ jQuery(document).ready(function($) {
                             }
 
                             src += "</select>";
-                            $(".warranty_info").html(src);
+                            jQuery(".warranty_info").html(src);
                         }
                     }
 
                     if ( 'no_warranty' === variation._warranty.type ) {
-                        $( '.warranty_info' ).hide();
+                        jQuery( '.warranty_info' ).hide();
                     } else {
-                        $( '.warranty_info' ).show();
+                        jQuery( '.warranty_info' ).show();
                     }
                 }
             }

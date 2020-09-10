@@ -1,10 +1,10 @@
 jQuery(function($) {
-    if ($("ul#warranty_form").length == 1 && $("ul#warranty_form_fields").length == 1) {
+    if (jQuery("ul#warranty_form").length == 1 && jQuery("ul#warranty_form_fields").length == 1) {
 
         var form = Warranty_Form_Builder;
-        form.init($("#warranty_form"));
+        form.init(jQuery("#warranty_form"));
 
-        $("ul#warranty_form").sortable({
+        jQuery("ul#warranty_form").sortable({
             cursor      :   "move",
             tolerance   :   "pointer",
             update      :   function(evt, ui) {
@@ -12,15 +12,15 @@ jQuery(function($) {
                             }
         });
 
-        $("a.control").click(function(e) {
+        jQuery("a.control").click(function(e) {
             e.preventDefault();
 
-            var type    = $(this).data("type");
-            var options = $(this).data("options");
+            var type    = jQuery(this).data("type");
+            var options = jQuery(this).data("options");
 
             var key = form.render_field(type, options);
 
-            $('html,body').animate({scrollTop: $("#wfb-field-"+key).offset().top-100});
+            jQuery('html,body').animate({scrollTop: jQuery("#wfb-field-"+key).offset().top-100});
 
         });
 
