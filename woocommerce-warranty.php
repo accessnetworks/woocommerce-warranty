@@ -50,17 +50,73 @@ function wc_warranty_woocommerce_deactivated() {
 	echo '<div class="error"><p>' . sprintf( esc_html__( 'WooCommerce Warranty Requests requires %s to be installed and active.', 'wc_warranty' ), '<a href="https://woocommerce.com/" target="_blank">WooCommerce</a>' ) . '</p></div>';
 }
 
+/**
+ * [WooCommerce_Warranty description]
+ */
 class WooCommerce_Warranty {
 
+	/**
+	 * [public description]
+	 *
+	 * @var [type]
+	 */
 	public static $plugin_file;
+
+	/**
+	 * [public description]
+	 *
+	 * @var [type]
+	 */
 	public static $base_path;
+
+	/**
+	 * [public description]
+	 *
+	 * @var [type]
+	 */
 	public static $includes_path;
+
+	/**
+	 * [public description]
+	 *
+	 * @var [type]
+	 */
 	public static $admin;
-	public static $default_statuses  = array();
+
+	/**
+	 * [public description]
+	 *
+	 * @var [type]
+	 */
+	public static $default_statuses = array();
+
+	/**
+	 * [public description]
+	 *
+	 * @var [type]
+	 */
 	public static $shipping_tracking = false;
-	public static $providers         = array(); // Shipping providers.
-	public static $tips              = array();
-	public static $db_version        = '20160506';
+
+	/**
+	 * [public description]
+	 *
+	 * @var [type]
+	 */
+	public static $providers = array(); // Shipping providers.
+
+	/**
+	 * [public description]
+	 *
+	 * @var [type]
+	 */
+	public static $tips = array();
+
+	/**
+	 * [public description]
+	 *
+	 * @var [type]
+	 */
+	public static $db_version = '20160506';
 
 	/**
 	 * Setup the WC_Warranty extension
@@ -102,6 +158,11 @@ class WooCommerce_Warranty {
 		require_once self::$includes_path . '/class-warranty-privacy.php';
 	}
 
+	/**
+	 * [enqueue_scripts description]
+	 *
+	 * @return [type] [description]
+	 */
 	public function enqueue_scripts() {
 		wp_enqueue_style( 'wc_warranty', plugins_url( 'assets/css/front.css', self::$plugin_file ), array(), WOOCOMMERCE_WARRANTY_VERSION );
 	}
@@ -290,6 +351,11 @@ class WooCommerce_Warranty {
 		return $duration . ' ' . $unit;
 	}
 
+	/**
+	 * [clear_all_product_warranties description]
+	 *
+	 * @return [type] [description]
+	 */
 	public static function clear_all_product_warranties() {
 		global $wpdb;
 
@@ -308,6 +374,12 @@ class WooCommerce_Warranty {
 		}
 	}
 
+	/**
+	 * [render_warranty_form description]
+	 *
+	 * @param  string $extra_key [description]
+	 * @return [type]            [description]
+	 */
 	public static function render_warranty_form( $extra_key = '' ) {
 		$defaults = array(
 			'fields' => array(),
@@ -328,6 +400,15 @@ class WooCommerce_Warranty {
 		}
 	}
 
+	/**
+	 * [render_warranty_form_field description]
+	 *
+	 * @param  [type] $type      [description]
+	 * @param  [type] $key       [description]
+	 * @param  [type] $field     [description]
+	 * @param  string $extra_key [description]
+	 * @return [type]            [description]
+	 */
 	public static function render_warranty_form_field( $type, $key, $field, $extra_key = '' ) {
 		echo '<div class="wfb-field-div wfb-field-div-' . $type . '" id="wfb-field-' . $key . $extra_key . '-div">';
 
@@ -433,6 +514,11 @@ class WooCommerce_Warranty {
 		echo '</div>';
 	}
 
+	/**
+	 * [render_old_warranty_form description]
+	 *
+	 * @return [type] [description]
+	 */
 	public static function render_old_warranty_form() {
 		$reasons      = get_option( 'warranty_reason', '' );
 		$reason_array = preg_split( "/(\r\n|\n|\r)/", $reasons );
