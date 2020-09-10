@@ -3,15 +3,26 @@
 if ( ! class_exists( 'WP_List_Table' ) ) {
 	require_once ABSPATH . 'wp-admin/includes/class-wp-list-table.php';
 }
-
+/**
+ * [Warranty_Active_Reports_List_Table description]
+ */
 class Warranty_Active_Reports_List_Table extends WP_List_Table {
-
+	/**
+	 * [public description]
+	 * @var [type]
+	 */
 	public $valid_orders = array();
-
+	/**
+	 * [__construct description]
+	 * @param array $args [description]
+	 */
 	function __construct( $args = array() ) {
 		parent::__construct( $args );
 	}
-
+	/**
+	 * [get_columns description]
+	 * @return [type] [description]
+	 */
 	function get_columns() {
 		$columns = array(
 			'order_id' => __( 'Order ID', 'wc_warranty' ),
@@ -23,7 +34,10 @@ class Warranty_Active_Reports_List_Table extends WP_List_Table {
 		);
 		return $columns;
 	}
-
+	/**
+	 * [get_sortable_columns description]
+	 * @return [type] [description]
+	 */
 	function get_sortable_columns() {
 		$sortable_columns = array(
 			'order_id' => array( 'order_id', false ),
@@ -31,7 +45,10 @@ class Warranty_Active_Reports_List_Table extends WP_List_Table {
 		);
 		return $sortable_columns;
 	}
-
+	/**
+	 * [prepare_items description]
+	 * @return [type] [description]
+	 */
 	function prepare_items() {
 		global $wpdb;
 
@@ -92,7 +109,11 @@ class Warranty_Active_Reports_List_Table extends WP_List_Table {
 
 		wp_reset_postdata();
 	}
-
+	/**
+	 * [column_order_id description]
+	 * @param  [type] $item [description]
+	 * @return [type]       [description]
+	 */
 	function column_order_id( $item ) {
 
 		$order_id     = get_post_meta( $item->ID, '_order_id', true );
@@ -112,13 +133,21 @@ class Warranty_Active_Reports_List_Table extends WP_List_Table {
 		}
 
 	}
-
+	/**
+	 * [column_status description]
+	 * @param  [type] $item [description]
+	 * @return [type]       [description]
+	 */
 	function column_status( $item ) {
 		$term   = wp_get_post_terms( $item->ID, 'shop_warranty_status' );
 		$status = isset( $term[0] ) ? $term[0]->name : '-';
 		return $status;
 	}
-
+	/**
+	 * [column_customer description]
+	 * @param  [type] $item [description]
+	 * @return [type]       [description]
+	 */
 	function column_customer( $item ) {
 		$order_id   = get_post_meta( $item->ID, '_order_id', true );
 		$order      = wc_get_order( $order_id );
@@ -127,7 +156,11 @@ class Warranty_Active_Reports_List_Table extends WP_List_Table {
 
 		return $first_name . ' ' . $last_name;
 	}
-
+	/**
+	 * [column_product description]
+	 * @param  [type] $item [description]
+	 * @return [type]       [description]
+	 */
 	function column_product( $item ) {
 		$products = warranty_get_request_items( $item->ID );
 
@@ -148,7 +181,11 @@ class Warranty_Active_Reports_List_Table extends WP_List_Table {
 
 		return $out;
 	}
-
+	/**
+	 * [column_validity description]
+	 * @param  [type] $item [description]
+	 * @return [type]       [description]
+	 */
 	function column_validity( $item ) {
 		$order_id    = get_post_meta( $item->ID, '_order_id', true );
 		$order       = wc_get_order( $order_id );
@@ -185,13 +222,20 @@ class Warranty_Active_Reports_List_Table extends WP_List_Table {
 			}
 		}
 	}
-
+	/**
+	 * [column_date description]
+	 * @param  [type] $item [description]
+	 * @return [type]       [description]
+	 */
 	function column_date( $item ) {
 		$order_id = get_post_meta( $item->ID, '_order_id', true );
 		$order    = wc_get_order( $order_id );
 		return date_i18n( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), strtotime( WC_Warranty_Compatibility::get_order_prop( $order, 'modified_date' ) ) );
 	}
-
+	/**
+	 * [no_items description]
+	 * @return [type] [description]
+	 */
 	function no_items() {
 		_e( 'No requests found.', 'wc_warranty' );
 	}

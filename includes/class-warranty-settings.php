@@ -8,7 +8,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  * todo Doc blocks
  */
 class Warranty_Settings {
-
+	/**
+	 * [__construct description]
+	 */
 	public function __construct() {
 		// settings
 		add_action( 'woocommerce_update_option', array( $this, 'update_warranty_emails' ) );
@@ -34,7 +36,10 @@ class Warranty_Settings {
 		add_action( 'woocommerce_admin_field_warranty_logo', array( $this, 'warranty_logo_field' ) );
 
 	}
-
+	/**
+	 * [get_settings_fields description]
+	 * @return [type] [description]
+	 */
 	public static function get_settings_fields() {
 		$warranty_page_id        = wc_get_page_id( 'warranty' );
 		$order_status_options    = array();

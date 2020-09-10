@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * [warranty_get_variation_string description]
+ * @param  [type] $order [description]
+ * @param  [type] $item  [description]
+ * @return [type]        [description]
+ */
 function warranty_get_variation_string( $order, $item ) {
 	$product        = $order->get_product_from_item( $item );
 	$formatted_meta = array();
@@ -42,7 +47,11 @@ function warranty_get_variation_string( $order, $item ) {
 
 	return $output;
 }
-
+/**
+ * [warranty_return_shipping_tracking_code_form description]
+ * @param  [type] $request [description]
+ * @return [type]          [description]
+ */
 function warranty_return_shipping_tracking_code_form( $request ) {
 	ob_start();
 	?>
@@ -122,7 +131,11 @@ function warranty_return_shipping_tracking_code_form( $request ) {
 
 	return ob_get_clean();
 }
-
+/**
+ * [warranty_request_shipping_tracking_code_form description]
+ * @param  [type] $request [description]
+ * @return [type]          [description]
+ */
 function warranty_request_shipping_tracking_code_form( $request ) {
 	ob_start();
 	?>
@@ -162,11 +175,19 @@ function warranty_request_shipping_tracking_code_form( $request ) {
 	<?php
 	return ob_get_clean();
 }
-
+/**
+ * [warranty_stripslashes description]
+ * @param  [type] $value [description]
+ * @return [type]        [description]
+ */
 function warranty_stripslashes( $value ) {
 	return stripslashes( $value );
 }
-
+/**
+ * [warranty_get_order_item_warranty description]
+ * @param  [type] $item [description]
+ * @return [type]       [description]
+ */
 function warranty_get_order_item_warranty( $item ) {
 	$meta     = $item['item_meta'];
 	$warranty = array( 'type' => 'no_warranty' );
@@ -185,7 +206,12 @@ function warranty_get_order_item_warranty( $item ) {
 
 	return $warranty;
 }
-
+/**
+ * [warranty_get_warranty_duration_string description]
+ * @param  [type] $warranty [description]
+ * @param  [type] $order    [description]
+ * @return [type]           [description]
+ */
 function warranty_get_warranty_duration_string( $warranty, $order ) {
 	if ( version_compare( WC_VERSION, '3.0', '<' ) ) {
 		$completed = get_post_meta( $order->id, '_completed_date', true );
@@ -608,7 +634,10 @@ function warranty_update_status( $warranty_id, $new_status ) {
 	warranty_send_emails( $warranty_id, $new_status, $prev_status );
 	warranty_add_order_note( $warranty_id );
 }
-
+/**
+ * [warranty_get_completed_status description]
+ * @return [type] [description]
+ */
 function warranty_get_completed_status() {
 	foreach ( warranty_get_statuses() as $status ) {
 		if ( $status->name == 'Completed' ) {
@@ -677,7 +706,13 @@ function warranty_get_date( $order_date, $warranty_duration, $warranty_unit ) {
 
 	return '-';
 }
-
+/**
+ * [warranty_add_request_item description]
+ * @param [type]  $request_id       [description]
+ * @param [type]  $product_id       [description]
+ * @param string  $order_item_index [description]
+ * @param integer $quantity         [description]
+ */
 function warranty_add_request_item( $request_id, $product_id, $order_item_index = '', $quantity = 1 ) {
 	global $wpdb;
 
@@ -692,7 +727,11 @@ function warranty_add_request_item( $request_id, $product_id, $order_item_index 
 
 	return $wpdb->insert_id;
 }
-
+/**
+ * [warranty_get_request_items description]
+ * @param  [type] $request_id [description]
+ * @return [type]             [description]
+ */
 function warranty_get_request_items( $request_id ) {
 	global $wpdb;
 
@@ -835,7 +874,11 @@ function warranty_update_request( $request_id, $data ) {
 		update_post_meta( $request_id, '_' . $field, $value );
 	}
 }
-
+/**
+ * [warranty_delete_request description]
+ * @param  [type] $request_id [description]
+ * @return [type]             [description]
+ */
 function warranty_delete_request( $request_id ) {
 	global $wpdb;
 
@@ -914,7 +957,11 @@ function warranty_load( $request_id ) {
 
 	return apply_filters( 'warranty_load', $warranty, $request_id );
 }
-
+/**
+ * [warranty_get_product_title description]
+ * @param  [type] $product_id [description]
+ * @return [type]             [description]
+ */
 function warranty_get_product_title( $product_id ) {
 	$product = wc_get_product( $product_id );
 	$title   = get_the_title( $product_id );
@@ -1393,7 +1440,11 @@ function warranty_add_order_note( $warranty_id ) {
 	$order->add_order_note( $note );
 	return true;
 }
-
+/**
+ * [warranty_get_tracking_data description]
+ * @param  [type] $request_id [description]
+ * @return [type]             [description]
+ */
 function warranty_get_tracking_data( $request_id ) {
 	$tracking = array();
 	$request  = warranty_load( $request_id );

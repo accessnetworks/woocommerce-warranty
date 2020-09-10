@@ -3,9 +3,13 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-
+/**
+ * [Warranty_Shortcodes description]
+ */
 class Warranty_Shortcodes {
-
+	/**
+	 * [__construct description]
+	 */
 	public function __construct() {
 		// Account Shortcode
 		add_shortcode( 'warranty_request', array( $this, 'render_warranty_request_shortcode' ) );
