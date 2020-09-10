@@ -9,10 +9,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Warranty_Settings {
 	/**
-	 * [__construct description]
+	 * Constructor.
 	 */
 	public function __construct() {
-		// settings
+
+		// Settings.
 		add_action( 'woocommerce_update_option', array( $this, 'update_warranty_emails' ) );
 		add_action( 'woocommerce_update_option', array( $this, 'update_permissions' ) );
 		add_action( 'woocommerce_update_option', array( $this, 'update_multi_status' ) );
@@ -20,7 +21,7 @@ class Warranty_Settings {
 		add_action( 'woocommerce_update_option', array( $this, 'update_category_warranties' ) );
 		add_action( 'woocommerce_update_option', array( $this, 'update_default_addons' ) );
 
-		// WC 2.4 support for storing admin settings
+		// WC 2.4 support for storing admin settings.
 		add_filter( 'woocommerce_admin_settings_sanitize_option', array( $this, 'warranty_emails_posted_value' ), 10, 3 );
 		add_filter( 'woocommerce_admin_settings_sanitize_option', array( $this, 'permissions_posted_value' ), 10, 3 );
 		add_filter( 'woocommerce_admin_settings_sanitize_option', array( $this, 'multi_status_posted_value' ), 10, 3 );
@@ -37,7 +38,7 @@ class Warranty_Settings {
 
 	}
 	/**
-	 * [get_settings_fields description]
+	 * Get Settings Fields.
 	 *
 	 * @return [type] [description]
 	 */
