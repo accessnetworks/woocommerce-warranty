@@ -56,7 +56,7 @@ class Warranty_Frontend {
 	public function frontend_styles() {
 		global $post;
 
-		wp_enqueue_style( 'wc-form-builder', plugins_url( 'assets/css/form-builder.css', WooCommerce_Warranty::$plugin_file ) );
+		wp_enqueue_style( 'wc-form-builder', plugins_url( 'assets/css/form-builder.min.css', WooCommerce_Warranty::$plugin_file ) );
 
 		if ( $post ) {
 			$product = wc_get_product( $post->ID );

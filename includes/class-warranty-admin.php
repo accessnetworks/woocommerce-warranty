@@ -139,7 +139,7 @@ if ( ! class_exists( 'Warranty_Admin' ) ) :
 				$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 				wp_register_script( 'jquery-tiptip', WC()->plugin_url() . '/assets/js/jquery-tiptip/jquery.tipTip' . $suffix . '.js', array( 'jquery' ), WC()->version );
 
-				wp_enqueue_style( 'woocommerce_admin_styles', $woocommerce->plugin_url() . '/assets/css/admin.css' );
+				wp_enqueue_style( 'woocommerce_admin_styles', $woocommerce->plugin_url() . '/assets/css/admin.min.css' );
 
 				wp_enqueue_script( 'jquery-blockui', WC()->plugin_url() . '/assets/js/jquery-blockui/jquery.blockUI.min.js', array( 'jquery' ), '2.70', true );
 				wp_enqueue_script( 'jquery-tiptip' );
@@ -156,7 +156,7 @@ if ( ! class_exists( 'Warranty_Admin' ) ) :
 							"fadeOut" : 50,
 							"delay" : 200
 						};
-						$(".tips, .help_tip").tipTip( tiptip_args );
+						jQuery(".tips, .help_tip").tipTip( tiptip_args );
 					';
 
 				if ( function_exists( 'wc_enqueue_js' ) ) {
@@ -176,7 +176,7 @@ if ( ! class_exists( 'Warranty_Admin' ) ) :
 				}
 
 				if ( in_array( $_GET['page'], $pages ) ) {
-					wp_enqueue_style( 'warranty_admin_css', plugins_url( 'assets/css/admin.css', WooCommerce_Warranty::$plugin_file ) );
+					wp_enqueue_style( 'warranty_admin_css', plugins_url( 'assets/css/admin.min.css', WooCommerce_Warranty::$plugin_file ) );
 
 					wp_enqueue_script( 'jquery-ui' );
 					wp_enqueue_script( 'jquery-ui-sortable' );
@@ -196,11 +196,11 @@ if ( ! class_exists( 'Warranty_Admin' ) ) :
 			if ( $screen->id == 'edit-shop_order' ) {
 				add_thickbox();
 				wp_enqueue_media();
-				wp_enqueue_style( 'warranty_admin_css', plugins_url( 'assets/css/admin.css', WooCommerce_Warranty::$plugin_file ) );
+				wp_enqueue_style( 'warranty_admin_css', plugins_url( 'assets/css/admin.min.css', WooCommerce_Warranty::$plugin_file ) );
 				wp_enqueue_script( 'warranty_shop_order', plugins_url( 'assets/js/orders.min.js', WooCommerce_Warranty::$plugin_file ), array( 'jquery' ) );
 			}
 
-			wp_enqueue_style( 'wc-form-builder', plugins_url( 'assets/css/form-builder.css', WooCommerce_Warranty::$plugin_file ) );
+			wp_enqueue_style( 'wc-form-builder', plugins_url( 'assets/css/form-builder.min.css', WooCommerce_Warranty::$plugin_file ) );
 
 			$js = '
 					if ( jQuery( \'select.multi-select2\' ).length ) {
@@ -236,43 +236,43 @@ if ( ! class_exists( 'Warranty_Admin' ) ) :
 				?>
 				<script type="text/javascript">
 					jQuery(document).ready(function($) {
-						$( '.wc-metaboxes-wrapper' ).on( 'click' , '.wc-metabox h3' , function( event ) {
-							$( 'select.variable-warranty-type' ).change();
+						jQuery( '.wc-metaboxes-wrapper' ).on( 'click' , '.wc-metabox h3' , function( event ) {
+							jQuery( 'select.variable-warranty-type' ).change();
 							if( event.target === event.currentTarget){
-								  $( '.variable-warranty-type' ).closest( '.woocommerce_variation' ).removeClass( 'variation-needs-update' );
+								  jQuery( '.variable-warranty-type' ).closest( '.woocommerce_variation' ).removeClass( 'variation-needs-update' );
 							}
 						});
 
-						$("#variable_product_options").on("change", ".warranty_default_checkbox", function() {
-							var id = $(this).data("id");
+						jQuery("#variable_product_options").on("change", ".warranty_default_checkbox", function() {
+							var id = jQuery(this).data("id");
 
-							if ($(this).is(":checked")) {
-								$(".warranty_"+id).attr("disabled", true);
+							if (jQuery(this).is(":checked")) {
+								jQuery(".warranty_"+id).attr("disabled", true);
 							} else {
-								$(".warranty_"+id).attr("disabled", false);
+								jQuery(".warranty_"+id).attr("disabled", false);
 							}
 						})
 
-						$("#variable_product_options").on("change", ".variable-warranty-type", function() {
-							var loop = $(this).parents(".warranty-variation").data("loop");
+						jQuery("#variable_product_options").on("change", ".variable-warranty-type", function() {
+							var loop = jQuery(this).parents(".warranty-variation").data("loop");
 
-							$(".variable_show_if_included_warranty_"+ loop).hide()
-							$(".variable_show_if_addon_warranty_"+loop).hide();
+							jQuery(".variable_show_if_included_warranty_"+ loop).hide()
+							jQuery(".variable_show_if_addon_warranty_"+loop).hide();
 
-							if ($(this).val() == "included_warranty") {
-								$(".variable_show_if_included_warranty_"+ loop).show();
-							} else if ($(this).val() == "addon_warranty") {
-								$(".variable_show_if_addon_warranty_"+ loop).show();
+							if (jQuery(this).val() == "included_warranty") {
+								jQuery(".variable_show_if_included_warranty_"+ loop).show();
+							} else if (jQuery(this).val() == "addon_warranty") {
+								jQuery(".variable_show_if_addon_warranty_"+ loop).show();
 							}
 						})
 
-						$("#variable_product_options").on("change", ".variable-included-warranty-length", function() {
-							var loop = $(this).parents(".warranty-variation").data("loop");
+						jQuery("#variable_product_options").on("change", ".variable-included-warranty-length", function() {
+							var loop = jQuery(this).parents(".warranty-variation").data("loop");
 
-							if ($(this).val() == "limited") {
-								$(".variable_limited_warranty_length_field_"+ loop ).show();
+							if (jQuery(this).val() == "limited") {
+								jQuery(".variable_limited_warranty_length_field_"+ loop ).show();
 							} else {
-								$(".variable_limited_warranty_length_field_"+ loop ).hide();
+								jQuery(".variable_limited_warranty_length_field_"+ loop ).hide();
 							}
 						})
 
@@ -293,27 +293,27 @@ if ( ! class_exists( 'Warranty_Admin' ) ) :
 								<td><a class=\"button warranty_addon_remove_variable\" href=\"#\">&times;</a></td>\
 							</tr>";
 
-						$("#variable_product_options").on("click", ".btn-add-warranty-variable", function(e) {
+						jQuery("#variable_product_options").on("click", ".btn-add-warranty-variable", function(e) {
 							e.preventDefault();
-							var loop = $(this).data("loop");
+							var loop = jQuery(this).data("loop");
 
-							$("#variable_warranty_addons_"+ loop).append( variable_tmpl.replace(/_loop_/g, loop) );
+							jQuery("#variable_warranty_addons_"+ loop).append( variable_tmpl.replace(/_loop_/g, loop) );
 						});
 
-						$(".warranty_addon_remove_variable").on("click", function(e) {
+						jQuery(".warranty_addon_remove_variable").on("click", function(e) {
 							e.preventDefault();
 
-							$(this).parents("tr").eq(0).remove();
+							jQuery(this).parents("tr").eq(0).remove();
 						});
 
-						$( '#woocommerce-product-data' ).on( 'woocommerce_variations_loaded' , function() {
-							$( '.warranty_default_checkbox, .variable-warranty-type, .variable-warranty-length' ).change();
-							$( '.warranty_default_checkbox, .variable-warranty-type, .variable-warranty-length' )
+						jQuery( '#woocommerce-product-data' ).on( 'woocommerce_variations_loaded' , function() {
+							jQuery( '.warranty_default_checkbox, .variable-warranty-type, .variable-warranty-length' ).change();
+							jQuery( '.warranty_default_checkbox, .variable-warranty-type, .variable-warranty-length' )
 								.closest( '.woocommerce_variation' )
 								.removeClass( 'variation-needs-update' );
 						});
-						$( '#woocommerce-product-data' ).on( 'woocommerce_variations_added', function() {
-							$( '.warranty_default_checkbox, .variable-warranty-type, .variable-warranty-length' ).change();
+						jQuery( '#woocommerce-product-data' ).on( 'woocommerce_variations_added', function() {
+							jQuery( '.warranty_default_checkbox, .variable-warranty-type, .variable-warranty-length' ).change();
 						});
 					});
 				</script>
@@ -359,31 +359,31 @@ if ( ! class_exists( 'Warranty_Admin' ) ) :
 			$currency = get_woocommerce_currency_symbol();
 			$inline   = '
 				var warranty_fields_toggled = false;
-				$("#product_warranty_default").change(function() {
+				jQuery("#product_warranty_default").change(function() {
 
-					if ($(this).is(":checked")) {
-						$(".warranty_field").attr("disabled", true);
+					if (jQuery(this).is(":checked")) {
+						jQuery(".warranty_field").attr("disabled", true);
 					} else {
-						$(".warranty_field").attr("disabled", false);
+						jQuery(".warranty_field").attr("disabled", false);
 					}
 
 				}).change();
 
-				$("#product_warranty_type").change(function() {
-					$(".show_if_included_warranty, .show_if_addon_warranty").hide();
+				jQuery("#product_warranty_type").change(function() {
+					jQuery(".show_if_included_warranty, .show_if_addon_warranty").hide();
 
-					if ($(this).val() == "included_warranty") {
-						$(".show_if_included_warranty").show();
-					} else if ($(this).val() == "addon_warranty") {
-						$(".show_if_addon_warranty").show();
+					if (jQuery(this).val() == "included_warranty") {
+						jQuery(".show_if_included_warranty").show();
+					} else if (jQuery(this).val() == "addon_warranty") {
+						jQuery(".show_if_addon_warranty").show();
 					}
 				}).change();
 
-				$("#included_warranty_length").change(function() {
-					if ($(this).val() == "limited") {
-						$(".limited_warranty_length_field").show();
+				jQuery("#included_warranty_length").change(function() {
+					if (jQuery(this).val() == "limited") {
+						jQuery(".limited_warranty_length_field").show();
 					} else {
-						$(".limited_warranty_length_field").hide();
+						jQuery(".limited_warranty_length_field").hide();
 					}
 				}).change();
 
@@ -404,35 +404,35 @@ if ( ! class_exists( 'Warranty_Admin' ) ) :
 								<td><a class=\"button warranty_addon_remove\" href=\"#\">&times;</a></td>\
 							</tr>";
 
-				$(".btn-add-warranty").click(function(e) {
+				jQuery(".btn-add-warranty").click(function(e) {
 					e.preventDefault();
 
-					$("#warranty_addons").append(tmpl);
+					jQuery("#warranty_addons").append(tmpl);
 				});
 
-				$(".warranty_addon_remove").on("click", function(e) {
+				jQuery(".warranty_addon_remove").on("click", function(e) {
 					e.preventDefault();
 
-					$(this).parents("tr").remove();
+					jQuery(this).parents("tr").remove();
 				});
 
-				$("#variable_warranty_control").change(function() {
-					if ($(this).val() == "variations") {
-						$(".hide_if_control_variations").hide();
-						$(".show_if_control_variations").show();
+				jQuery("#variable_warranty_control").change(function() {
+					if (jQuery(this).val() == "variations") {
+						jQuery(".hide_if_control_variations").hide();
+						jQuery(".show_if_control_variations").show();
 					} else {
-						$(".hide_if_control_variations").show();
-						$(".show_if_control_variations").hide();
-						$("#warranty_product_data :input[id!=variable_warranty_control]").change();
+						jQuery(".hide_if_control_variations").show();
+						jQuery(".show_if_control_variations").hide();
+						jQuery("#warranty_product_data :input[id!=variable_warranty_control]").change();
 					}
 				}).change();
 
-				$("#variable_product_options").on("woocommerce_variations_added", function() {
-					$("#variable_warranty_control").change();
+				jQuery("#variable_product_options").on("woocommerce_variations_added", function() {
+					jQuery("#variable_warranty_control").change();
 				});
 
-				$("#woocommerce-product-data").on("woocommerce_variations_loaded", function() {
-					$("#variable_warranty_control").change();
+				jQuery("#woocommerce-product-data").on("woocommerce_variations_loaded", function() {
+					jQuery("#variable_warranty_control").change();
 				});
 				';
 
@@ -485,31 +485,31 @@ if ( ! class_exists( 'Warranty_Admin' ) ) :
 
 			$currency = get_woocommerce_currency_symbol();
 			$inline   = '
-				$("#variable_product_options").on("change", ".warranty_default_checkbox", function() {
-					var id = $(this).data("id");
+				jQuery("#variable_product_options").on("change", ".warranty_default_checkbox", function() {
+					var id = jQuery(this).data("id");
 
-					if ($(this).is(":checked")) {
-						$(".warranty_"+id).attr("disabled", true);
+					if (jQuery(this).is(":checked")) {
+						jQuery(".warranty_"+id).attr("disabled", true);
 					} else {
-						$(".warranty_"+id).attr("disabled", false);
+						jQuery(".warranty_"+id).attr("disabled", false);
 					}
 				}).change();
 
-				$("#variable_product_warranty_type_' . $loop . '").change(function() {
-					$(".variable_show_if_included_warranty_' . $loop . ', .variable_show_if_addon_warranty_' . $loop . '").hide();
+				jQuery("#variable_product_warranty_type_' . $loop . '").change(function() {
+					jQuery(".variable_show_if_included_warranty_' . $loop . ', .variable_show_if_addon_warranty_' . $loop . '").hide();
 
-					if ($(this).val() == "included_warranty") {
-						$(".variable_show_if_included_warranty_' . $loop . '").show();
-					} else if ($(this).val() == "addon_warranty") {
-						$(".variable_show_if_addon_warranty_' . $loop . '").show();
+					if (jQuery(this).val() == "included_warranty") {
+						jQuery(".variable_show_if_included_warranty_' . $loop . '").show();
+					} else if (jQuery(this).val() == "addon_warranty") {
+						jQuery(".variable_show_if_addon_warranty_' . $loop . '").show();
 					}
 				}).change();
 
-				$("#variable_included_warranty_length_' . $loop . '").change(function() {
-					if ($(this).val() == "limited") {
-						$(".variable_limited_warranty_length_field_' . $loop . '").show();
+				jQuery("#variable_included_warranty_length_' . $loop . '").change(function() {
+					if (jQuery(this).val() == "limited") {
+						jQuery(".variable_limited_warranty_length_field_' . $loop . '").show();
 					} else {
-						$(".variable_limited_warranty_length_field_' . $loop . '").hide();
+						jQuery(".variable_limited_warranty_length_field_' . $loop . '").hide();
 					}
 				}).change();
 
@@ -530,15 +530,15 @@ if ( ! class_exists( 'Warranty_Admin' ) ) :
 								<td><a class=\"button warranty_addon_remove_variable_' . $loop . '\" data-loop=\"' . $loop . '\" href=\"#\">&times;</a></td>\
 							</tr>";
 
-				$(".btn-add-warranty-variable").click(function(e) {
+				jQuery(".btn-add-warranty-variable").click(function(e) {
 					e.preventDefault();
-					$("#variable_warranty_addons_' . $loop . '").append(tmpl_' . $loop . ');
+					jQuery("#variable_warranty_addons_' . $loop . '").append(tmpl_' . $loop . ');
 				});
 
-				$(".warranty_addon_remove_variable_' . $loop . '").on("click", function(e) {
+				jQuery(".warranty_addon_remove_variable_' . $loop . '").on("click", function(e) {
 					e.preventDefault();
 
-					$(this).parents("tr").eq(0).remove();
+					jQuery(this).parents("tr").eq(0).remove();
 				});
 				';
 
