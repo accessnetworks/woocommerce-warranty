@@ -153,13 +153,13 @@ $products = new WP_Query(
 									<span class="title"><?php _e( 'Validity', 'wc_warranty' ); ?></span>
 									<span class="input-text-wrap">
 										<select name="included_warranty_length[<?php echo $_product->get_id(); ?>]" class="select short included-warranty-length warranty_<?php echo $_product->get_id(); ?>" id="included_warranty_length_<?php echo $_product->get_id(); ?>">
-											<option 
+											<option
 											<?php
 											if ( $warranty['type'] == 'included_warranty' && $warranty['length'] == 'lifetime' ) {
 												echo 'selected';}
 											?>
 											 value="lifetime"><?php _e( 'Lifetime', 'wc_warranty' ); ?></option>
-											<option 
+											<option
 											<?php
 											if ( $warranty['type'] == 'included_warranty' && $warranty['length'] == 'limited' ) {
 												echo 'selected';}
@@ -185,25 +185,25 @@ $products = new WP_Query(
 
 									<label class="alignleft">
 										<select name="limited_warranty_length_duration[<?php echo $_product->get_id(); ?>]" class="warranty_<?php echo $_product->get_id(); ?>" style="vertical-align: baseline;">
-											<option 
+											<option
 											<?php
 											if ( $warranty['type'] == 'included_warranty' && $warranty['duration'] == 'days' ) {
 												echo 'selected';}
 											?>
 											 value="days"><?php _e( 'Days', 'wc_warranty' ); ?></option>
-											<option 
+											<option
 											<?php
 											if ( $warranty['type'] == 'included_warranty' && $warranty['duration'] == 'weeks' ) {
 												echo 'selected';}
 											?>
 											 value="weeks"><?php _e( 'Weeks', 'wc_warranty' ); ?></option>
-											<option 
+											<option
 											<?php
 											if ( $warranty['type'] == 'included_warranty' && $warranty['duration'] == 'months' ) {
 												echo 'selected';}
 											?>
 											 value="months"><?php _e( 'Months', 'wc_warranty' ); ?></option>
-											<option 
+											<option
 											<?php
 											if ( $warranty['type'] == 'included_warranty' && $warranty['duration'] == 'years' ) {
 												echo 'selected';}
@@ -222,7 +222,7 @@ $products = new WP_Query(
 
 								<div class="inline-edit-group">
 									<label class="alignleft">
-										<input type="checkbox" name="addon_no_warranty[<?php echo $_product->get_id(); ?>]" id="addon_no_warranty" value="yes" 
+										<input type="checkbox" name="addon_no_warranty[<?php echo $_product->get_id(); ?>]" id="addon_no_warranty" value="yes"
 																								  <?php
 																									if ( isset( $warranty['no_warranty_option'] ) && $warranty['no_warranty_option'] == 'yes' ) {
 																										echo 'checked';}
@@ -261,25 +261,25 @@ $products = new WP_Query(
 																													?>
 													" />
 													<select name="addon_warranty_length_duration[<?php echo $_product->get_id(); ?>][]" class="warranty_<?php echo $_product->get_id(); ?>">
-														<option 
+														<option
 														<?php
 														if ( $warranty['type'] == 'addon_warranty' ) {
 															selected( $addon['duration'], 'days' );}
 														?>
 														 value="days"><?php _e( 'Days', 'wc_warranty' ); ?></option>
-														<option 
+														<option
 														<?php
 														if ( $warranty['type'] == 'addon_warranty' ) {
 															selected( $addon['duration'], 'weeks' );}
 														?>
 														 value="weeks"><?php _e( 'Weeks', 'wc_warranty' ); ?></option>
-														<option 
+														<option
 														<?php
 														if ( $warranty['type'] == 'addon_warranty' ) {
 															selected( $addon['duration'], 'months' );}
 														?>
 														 value="months"><?php _e( 'Months', 'wc_warranty' ); ?></option>
-														<option 
+														<option
 														<?php
 														if ( $warranty['type'] == 'addon_warranty' ) {
 															selected( $addon['duration'], 'years' );}
@@ -392,13 +392,13 @@ $products = new WP_Query(
 											<span class="title"><?php _e( 'Validity', 'wc_warranty' ); ?></span>
 											<span class="input-text-wrap">
 												<select name="included_warranty_length[<?php echo $child; ?>]" class="select short included-warranty-length warranty_<?php echo $child; ?>" id="included_warranty_length_<?php echo $child; ?>">
-													<option 
+													<option
 													<?php
 													if ( $warranty['type'] == 'included_warranty' && $warranty['length'] == 'lifetime' ) {
 														echo 'selected';}
 													?>
 													 value="lifetime"><?php _e( 'Lifetime', 'wc_warranty' ); ?></option>
-													<option 
+													<option
 													<?php
 													if ( $warranty['type'] == 'included_warranty' && $warranty['length'] == 'limited' ) {
 														echo 'selected';}
@@ -423,25 +423,25 @@ $products = new WP_Query(
 											</label>
 											<label class="alignleft">
 												<select name="limited_warranty_length_duration[<?php echo $child; ?>]" class="warranty_<?php echo $child; ?>" style="vertical-align: baseline;">
-													<option 
+													<option
 													<?php
 													if ( $warranty['type'] == 'included_warranty' && $warranty['duration'] == 'days' ) {
 														echo 'selected';}
 													?>
 													 value="days"><?php _e( 'Days', 'wc_warranty' ); ?></option>
-													<option 
+													<option
 													<?php
 													if ( $warranty['type'] == 'included_warranty' && $warranty['duration'] == 'weeks' ) {
 														echo 'selected';}
 													?>
 													 value="weeks"><?php _e( 'Weeks', 'wc_warranty' ); ?></option>
-													<option 
+													<option
 													<?php
 													if ( $warranty['type'] == 'included_warranty' && $warranty['duration'] == 'months' ) {
 														echo 'selected';}
 													?>
 													 value="months"><?php _e( 'Months', 'wc_warranty' ); ?></option>
-													<option 
+													<option
 													<?php
 													if ( $warranty['type'] == 'included_warranty' && $warranty['duration'] == 'years' ) {
 														echo 'selected';}
@@ -459,7 +459,7 @@ $products = new WP_Query(
 
 										<div class="inline-edit-group">
 											<label class="alignleft">
-												<input type="checkbox" name="addon_no_warranty[<?php echo $child; ?>]" id="addon_no_warranty" value="yes" 
+												<input type="checkbox" name="addon_no_warranty[<?php echo $child; ?>]" id="addon_no_warranty" value="yes"
 																										  <?php
 																											if ( isset( $warranty['no_warranty_option'] ) && $warranty['no_warranty_option'] == 'yes' ) {
 																												echo 'checked';}
@@ -498,25 +498,25 @@ $products = new WP_Query(
 																															?>
 															" />
 															<select name="addon_warranty_length_duration[<?php echo $child; ?>][]" class="warranty_<?php echo $child; ?>">
-																<option 
+																<option
 																<?php
 																if ( $warranty['type'] == 'addon_warranty' ) {
 																	selected( $addon['duration'], 'days' );}
 																?>
 																 value="days"><?php _e( 'Days', 'wc_warranty' ); ?></option>
-																<option 
+																<option
 																<?php
 																if ( $warranty['type'] == 'addon_warranty' ) {
 																	selected( $addon['duration'], 'weeks' );}
 																?>
 																 value="weeks"><?php _e( 'Weeks', 'wc_warranty' ); ?></option>
-																<option 
+																<option
 																<?php
 																if ( $warranty['type'] == 'addon_warranty' ) {
 																	selected( $addon['duration'], 'months' );}
 																?>
 																 value="months"><?php _e( 'Months', 'wc_warranty' ); ?></option>
-																<option 
+																<option
 																<?php
 																if ( $warranty['type'] == 'addon_warranty' ) {
 																	selected( $addon['duration'], 'years' );}
@@ -584,25 +584,25 @@ $products = new WP_Query(
 			<div class="alignleft" style="line-height: 30px;">
 				<span class="displaying-num"><?php _e( 'Products per Page:', 'wc_warranty' ); ?></span>
 				<span class="pagination-links">
-					<a href="<?php echo esc_url( add_query_arg( 'per_page', 10, 'admin.php?page=warranties-bulk-update&tab=manage' ) ); ?>" 
+					<a href="<?php echo esc_url( add_query_arg( 'per_page', 10, 'admin.php?page=warranties-bulk-update&tab=manage' ) ); ?>"
 										<?php
 										if ( $per_page == 10 ) {
 											echo 'class="current"';}
 										?>
 					>10</a> |
-					<a href="<?php echo esc_url( add_query_arg( 'per_page', 25, 'admin.php?page=warranties-bulk-update&tab=manage' ) ); ?>" 
+					<a href="<?php echo esc_url( add_query_arg( 'per_page', 25, 'admin.php?page=warranties-bulk-update&tab=manage' ) ); ?>"
 										<?php
 										if ( $per_page == 25 ) {
 											echo 'class="current"';}
 										?>
 					>25</a> |
-					<a href="<?php echo esc_url( add_query_arg( 'per_page', 50, 'admin.php?page=warranties-bulk-update&tab=manage' ) ); ?>" 
+					<a href="<?php echo esc_url( add_query_arg( 'per_page', 50, 'admin.php?page=warranties-bulk-update&tab=manage' ) ); ?>"
 										<?php
 										if ( $per_page == 50 ) {
 											echo 'class="current"';}
 										?>
 					>50</a> |
-					<a href="<?php echo esc_url( add_query_arg( 'per_page', 100, 'admin.php?page=warranties-bulk-update&tab=manage' ) ); ?>" 
+					<a href="<?php echo esc_url( add_query_arg( 'per_page', 100, 'admin.php?page=warranties-bulk-update&tab=manage' ) ); ?>"
 										<?php
 										if ( $per_page == 100 ) {
 											echo 'class="current"';}
@@ -737,78 +737,78 @@ $products = new WP_Query(
 				<td><a class=\"button warranty_addon_remove\" href=\"#\">&times;</a></td>\
 			</tr>';
 		jQuery(document).ready(function($) {
-			$(".inline-edit-row").hide();
+			jQuery(".inline-edit-row").hide();
 
-			$("a.editinline").click(function(e) {
+			jQuery("a.editinline").click(function(e) {
 				e.preventDefault();
-				var target = "#"+ $(this).data("target");
+				var target = "#"+ jQuery(this).data("target");
 
-				if ( $(target).is(":visible") ) {
-					$(target).hide();
+				if ( jQuery(target).is(":visible") ) {
+					jQuery(target).hide();
 				} else {
-					$(target).css("display", "table-row");
+					jQuery(target).css("display", "table-row");
 				}
 
 			});
 
-			$("#doaction,#doaction2").click(function() {
-				if ( $(this).attr("id") == 'doaction' ) {
-					var action = $("#bulk-action-selector-top").val();
+			jQuery("#doaction,#doaction2").click(function() {
+				if ( jQuery(this).attr("id") == 'doaction' ) {
+					var action = jQuery("#bulk-action-selector-top").val();
 				} else {
-					var action = $("#bulk-action-selector-bottom").val();
+					var action = jQuery("#bulk-action-selector-bottom").val();
 				}
 
-				if ( $(".woocommerce_page_warranty_requests tbody .cb:checked").length == 0 ) {
+				if ( jQuery(".woocommerce_page_warranty_requests tbody .cb:checked").length == 0 ) {
 					return;
 				}
 
 				if ( action == "edit" ) {
-					$("tr#bulk-edit").remove();
-					$(".woocommerce_page_warranty_requests > tbody").prepend( $("#bulk_edit_tpl").html() );
+					jQuery("tr#bulk-edit").remove();
+					jQuery(".woocommerce_page_warranty_requests > tbody").prepend( jQuery("#bulk_edit_tpl").html() );
 
-					$(".default_toggle").change();
-					$(".warranty-type").change();
+					jQuery(".default_toggle").change();
+					jQuery(".warranty-type").change();
 
-					$('html, body').animate({
-						scrollTop: $("#bulk-edit").offset().top - 100
+					jQuery('html, body').animate({
+						scrollTop: jQuery("#bulk-edit").offset().top - 100
 					}, 1000);
 				}
 			});
 
-			$("table.woocommerce_page_warranty_requests").on("click", ".close-bulk-edit", function(e) {
+			jQuery("table.woocommerce_page_warranty_requests").on("click", ".close-bulk-edit", function(e) {
 				e.preventDefault();
-				$("tr#bulk-edit").remove();
+				jQuery("tr#bulk-edit").remove();
 			});
 
-			$("table.woocommerce_page_warranty_requests").on("change", ".default_toggle", function() {
-				var id = $(this).data("id");
+			jQuery("table.woocommerce_page_warranty_requests").on("change", ".default_toggle", function() {
+				var id = jQuery(this).data("id");
 
-				if ( $(this).is(":checked") ) {
-					$(".warranty_"+ id).attr("disabled", true);
+				if ( jQuery(this).is(":checked") ) {
+					jQuery(".warranty_"+ id).attr("disabled", true);
 				} else {
-					$(".warranty_"+ id)
+					jQuery(".warranty_"+ id)
 						.attr("disabled", false)
 						.change();
 				}
 			});
-			$(".default_toggle").change();
+			jQuery(".default_toggle").change();
 
-			$("table.woocommerce_page_warranty_requests").on("change", ".warranty-type", function() {
-				var parent  = $(this).parents("tr");
-				var id      = $(parent).data("id");
+			jQuery("table.woocommerce_page_warranty_requests").on("change", ".warranty-type", function() {
+				var parent  = jQuery(this).parents("tr");
+				var id      = jQuery(parent).data("id");
 
-				$(parent).find(".included-form").hide();
-				$(parent).find(".addon-form").hide();
+				jQuery(parent).find(".included-form").hide();
+				jQuery(parent).find(".addon-form").hide();
 
-				switch ($(this).val()) {
+				switch (jQuery(this).val()) {
 
 					case 'included_warranty':
-						$(parent).find(".included-form").show();
-						$("#included_warranty_length_"+id).change();
+						jQuery(parent).find(".included-form").show();
+						jQuery("#included_warranty_length_"+id).change();
 						break;
 
 					case 'addon_warranty':
-						$(parent).find(".addon-form").show();
+						jQuery(parent).find(".addon-form").show();
 						break;
 
 					default:
@@ -816,51 +816,51 @@ $products = new WP_Query(
 
 				}
 			});
-			$(".warranty-type").change();
+			jQuery(".warranty-type").change();
 
-			$("table.woocommerce_page_warranty_requests").on("change", ".included-warranty-length", function() {
-				var parent  = $(this).parents("tr");
-				var id      = $(parent).data("id");
+			jQuery("table.woocommerce_page_warranty_requests").on("change", ".included-warranty-length", function() {
+				var parent  = jQuery(this).parents("tr");
+				var id      = jQuery(parent).data("id");
 
-				if ($(this).val() == "lifetime") {
-					$("#limited_warranty_row_"+id).hide();
+				if (jQuery(this).val() == "lifetime") {
+					jQuery("#limited_warranty_row_"+id).hide();
 				} else {
-					$("#limited_warranty_row_"+id).show();
+					jQuery("#limited_warranty_row_"+id).show();
 				}
 			});
 
-			$(".included-warranty-length").each(function() {
-				$(this).change();
+			jQuery(".included-warranty-length").each(function() {
+				jQuery(this).change();
 			});
 
-			$(".btn-add-warranty").on("click", function(e) {
+			jQuery(".btn-add-warranty").on("click", function(e) {
 				e.preventDefault();
 
-				var id = $(this).parents("tr").eq(0).data("id");
+				var id = jQuery(this).parents("tr").eq(0).data("id");
 
 				var t = tmpl.replace(new RegExp('{id}', 'g'), id);
-				$(this).parents("tr").find(".addons-tbody").append(t);
+				jQuery(this).parents("tr").find(".addons-tbody").append(t);
 			});
 
-			$(".warranty_addon_remove").on("click", function(e) {
+			jQuery(".warranty_addon_remove").on("click", function(e) {
 				e.preventDefault();
 
-				$(this).parents("tr").eq(0).remove();
+				jQuery(this).parents("tr").eq(0).remove();
 			});
 
-			$("table.woocommerce_page_warranty_requests").on("click", "a.save", function(e) {
+			jQuery("table.woocommerce_page_warranty_requests").on("click", "a.save", function(e) {
 				e.preventDefault();
 
-				var id      = $(this).parents("tr.inline-edit-row").data("id");
-				var tr      = $("#edit_"+ id);
-				var data    = $("#edit_"+ id +" :input").serialize() + "&id="+id+"&action=warranty_product_warranty_update";
+				var id      = jQuery(this).parents("tr.inline-edit-row").data("id");
+				var tr      = jQuery("#edit_"+ id);
+				var data    = jQuery("#edit_"+ id +" :input").serialize() + "&id="+id+"&action=warranty_product_warranty_update";
 				var spinner = tr.find(".spinner");
 
 				spinner.show();
 
 				$.post(ajaxurl, data, function(resp) {
 					if (resp.string) {
-						$("#row_"+id).find("td.warranty_string").html(resp.string);
+						jQuery("#row_"+id).find("td.warranty_string").html(resp.string);
 					}
 
 					spinner.hide();

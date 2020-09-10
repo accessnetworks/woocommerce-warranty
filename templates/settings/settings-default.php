@@ -5,30 +5,30 @@
 </div>
 <script>
 	jQuery("document").ready(function($) {
-		$("#warranty_default_type").change(function() {
-			$(".show-if-addon_warranty").parents("tr").hide();
-			$(".show-if-included_warranty").parents("tr").hide();
+		jQuery("#warranty_default_type").change(function() {
+			jQuery(".show-if-addon_warranty").parents("tr").hide();
+			jQuery(".show-if-included_warranty").parents("tr").hide();
 
-			switch ($(this).val()) {
+			switch (jQuery(this).val()) {
 
 				case "included_warranty":
-					$(".show-if-included_warranty").parents("tr").show();
+					jQuery(".show-if-included_warranty").parents("tr").show();
 					break;
 
 				case "addon_warranty":
-					$(".show-if-addon_warranty").parents("tr").show();
+					jQuery(".show-if-addon_warranty").parents("tr").show();
 					break;
 
 			}
 		}).change();
 
-		$("#warranty_default_length").change(function() {
-			if ( $(this).val() == "limited" ) {
-				$("#warranty_default_length_value").parents("tr").show();
-				$("#warranty_default_length_duration").parents("tr").show();
+		jQuery("#warranty_default_length").change(function() {
+			if ( jQuery(this).val() == "limited" ) {
+				jQuery("#warranty_default_length_value").parents("tr").show();
+				jQuery("#warranty_default_length_duration").parents("tr").show();
 			} else {
-				$("#warranty_default_length_value").parents("tr").hide();
-				$("#warranty_default_length_duration").parents("tr").hide();
+				jQuery("#warranty_default_length_value").parents("tr").hide();
+				jQuery("#warranty_default_length_duration").parents("tr").hide();
 			}
 		}).change();
 	});

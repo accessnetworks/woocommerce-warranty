@@ -292,39 +292,39 @@
 	?>
 	var statuses = JSON.parse( decodeURIComponent( '<?php echo rawurlencode( wp_json_encode( $js_statuses ) ); ?>' ) );
 	jQuery(document).ready(function($) {
-		$(".add-email").click(function(e) {
+		jQuery(".add-email").click(function(e) {
 			e.preventDefault();
 
 			var idx = 1;
 
-			while ( $("#email_"+ idx).length > 0 ) {
+			while ( jQuery("#email_"+ idx).length > 0 ) {
 				idx++;
 			}
 
-			var src = $("#email-row-template tbody").html();
+			var src = jQuery("#email-row-template tbody").html();
 			src = src.replace(/_id_/g, idx);
 			// Need to replace noenhance with empty string, otherwise Select2 will be initialized for the template.
 			src = src.replace(/_noenhance_/g, '');
 
-			$("#emails_tbody").append(src);
-			$('body').trigger('wc-enhanced-select-init');
+			jQuery("#emails_tbody").append(src);
+			jQuery('body').trigger('wc-enhanced-select-init');
 		});
 
-		$(".delete-row").on("click", function(e) {
+		jQuery(".delete-row").on("click", function(e) {
 			e.preventDefault();
 
-			$(this).parents("tr").remove();
+			jQuery(this).parents("tr").remove();
 		});
 
-		$("#emails_tbody").on("change", ".trigger", function() {
-			var tr = $(this).closest("tr");
+		jQuery("#emails_tbody").on("change", ".trigger", function() {
+			var tr = jQuery(this).closest("tr");
 
-			if ( $(this).val() == "status" ) {
-				$(tr).find(".trigger_status").show();
+			if ( jQuery(this).val() == "status" ) {
+				jQuery(tr).find(".trigger_status").show();
 			} else {
-				$(tr).find(".trigger_status").hide();
+				jQuery(tr).find(".trigger_status").hide();
 			}
 		});
-		$(".trigger").change();
+		jQuery(".trigger").change();
 	});
 </script>
