@@ -9,6 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Warranty_Coupons {
 	/**
 	 * [init description]
+	 *
 	 * @return [type] [description]
 	 */
 	public static function init() {
@@ -17,6 +18,7 @@ class Warranty_Coupons {
 	}
 	/**
 	 * [send_coupon description]
+	 *
 	 * @return [type] [description]
 	 */
 	public static function send_coupon() {

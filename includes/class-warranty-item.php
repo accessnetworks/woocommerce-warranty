@@ -11,57 +11,68 @@ class Warranty_Item {
 
 	/**
 	 * [public description]
+	 *
 	 * @var [type]
 	 */
 	public $item_id;
 
 	/**
 	 * [public description]
+	 *
 	 * @var [type]
 	 */
 	public $type;
 	/**
 	 * [public description]
+	 *
 	 * @var [type]
 	 */
 	public $label;
 	/**
 	 * [public description]
+	 *
 	 * @var [type]
 	 */
 	public $addons;
 	/**
 	 * [public description]
+	 *
 	 * @var [type]
 	 */
 	public $addon_selected;
 	/**
 	 * [public description]
+	 *
 	 * @var [type]
 	 */
 	public $addon_default;
 	/**
 	 * [public description]
+	 *
 	 * @var [type]
 	 */
 	public $length;
 	/**
 	 * [public description]
+	 *
 	 * @var [type]
 	 */
 	public $duration_value;
 	/**
 	 * [public description]
+	 *
 	 * @var [type]
 	 */
 	public $duration_type;
 	/**
 	 * [public description]
+	 *
 	 * @var [type]
 	 */
 	public $no_warranty_option;
 	/**
 	 * [public description]
+	 *
 	 * @var [type]
 	 */
 	public $order_id;
@@ -105,6 +116,7 @@ class Warranty_Item {
 	}
 	/**
 	 * [get_order_id description]
+	 *
 	 * @return [type] [description]
 	 */
 	public function get_order_id() {
@@ -250,6 +262,7 @@ class Warranty_Item {
 	}
 	/**
 	 * [is_expired description]
+	 *
 	 * @return boolean [description]
 	 */
 	public function is_expired() {}

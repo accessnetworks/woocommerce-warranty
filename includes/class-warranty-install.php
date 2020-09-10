@@ -221,6 +221,7 @@ class Warranty_Install {
 	}
 	/**
 	 * [create_warranty_request_page description]
+	 *
 	 * @return [type] [description]
 	 */
 	public function create_warranty_request_page() {
@@ -274,6 +275,7 @@ class Warranty_Install {
 	}
 	/**
 	 * [create_options description]
+	 *
 	 * @return [type] [description]
 	 */
 	public function create_options() {
@@ -303,6 +305,7 @@ class Warranty_Install {
 	}
 	/**
 	 * [create_tables description]
+	 *
 	 * @return [type] [description]
 	 */
 	public function create_tables() {
@@ -340,6 +343,7 @@ class Warranty_Install {
 	}
 	/**
 	 * [install_statuses description]
+	 *
 	 * @return [type] [description]
 	 */
 	private function install_statuses() {

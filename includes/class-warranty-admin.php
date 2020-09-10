@@ -11,6 +11,7 @@ if ( ! class_exists( 'Warranty_Admin' ) ) :
 	class Warranty_Admin {
 		/**
 		 * [public description]
+		 *
 		 * @var [type]
 		 */
 		public static $shop_order_columns = 1;
@@ -77,6 +78,7 @@ if ( ! class_exists( 'Warranty_Admin' ) ) :
 
 		/**
 		 * [init description]
+		 *
 		 * @return [type] [description]
 		 */
 		public function init() {
@@ -464,6 +466,7 @@ if ( ! class_exists( 'Warranty_Admin' ) ) :
 		}
 		/**
 		 * [variables_panel description]
+		 *
 		 * @param  [type] $loop      [description]
 		 * @param  [type] $data      [description]
 		 * @param  [type] $variation [description]
@@ -755,6 +758,7 @@ if ( ! class_exists( 'Warranty_Admin' ) ) :
 		}
 		/**
 		 * [add_order_action description]
+		 *
 		 * @param [type] $actions [description]
 		 */
 		public function add_order_action( $actions ) {
@@ -764,6 +768,7 @@ if ( ! class_exists( 'Warranty_Admin' ) ) :
 		}
 		/**
 		 * [redirect_order_to_rma_form description]
+		 *
 		 * @param  [type] $order [description]
 		 * @return [type]        [description]
 		 */
@@ -1015,6 +1020,7 @@ if ( ! class_exists( 'Warranty_Admin' ) ) :
 		}
 		/**
 		 * [csv_import_fields description]
+		 *
 		 * @param  [type] $fields [description]
 		 * @return [type]         [description]
 		 */
@@ -1906,6 +1912,7 @@ if ( ! class_exists( 'Warranty_Admin' ) ) :
 		}
 		/**
 		 * [hidden_order_item_meta description]
+		 *
 		 * @param  [type] $hidden_meta [description]
 		 * @return [type]              [description]
 		 */
@@ -1957,6 +1964,7 @@ if ( ! class_exists( 'Warranty_Admin' ) ) :
 		}
 		/**
 		 * [add_addon_price_to_line_item description]
+		 *
 		 * @param [type] $order_id [description]
 		 * @param [type] $items    [description]
 		 */

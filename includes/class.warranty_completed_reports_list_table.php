@@ -9,11 +9,13 @@ if ( ! class_exists( 'WP_List_Table' ) ) {
 class Warranty_Completed_Reports_List_Table extends WP_List_Table {
 	/**
 	 * [public description]
+	 *
 	 * @var [type]
 	 */
 	public $valid_orders = array();
 	/**
 	 * [__construct description]
+	 *
 	 * @param array $args [description]
 	 */
 	function __construct( $args = array() ) {
@@ -22,6 +24,7 @@ class Warranty_Completed_Reports_List_Table extends WP_List_Table {
 
 	/**
 	 * [get_columns description]
+	 *
 	 * @return [type] [description]
 	 */
 	function get_columns() {
@@ -37,6 +40,7 @@ class Warranty_Completed_Reports_List_Table extends WP_List_Table {
 	}
 	/**
 	 * [get_sortable_columns description]
+	 *
 	 * @return [type] [description]
 	 */
 	function get_sortable_columns() {
@@ -48,6 +52,7 @@ class Warranty_Completed_Reports_List_Table extends WP_List_Table {
 	}
 	/**
 	 * [prepare_items description]
+	 *
 	 * @return [type] [description]
 	 */
 	function prepare_items() {
@@ -113,6 +118,7 @@ class Warranty_Completed_Reports_List_Table extends WP_List_Table {
 	}
 	/**
 	 * [column_order_id description]
+	 *
 	 * @param  [type] $item [description]
 	 * @return [type]       [description]
 	 */
@@ -138,6 +144,7 @@ class Warranty_Completed_Reports_List_Table extends WP_List_Table {
 
 	/**
 	 * [column_status description]
+	 *
 	 * @param  [type] $item [description]
 	 * @return [type]       [description]
 	 */
@@ -149,6 +156,7 @@ class Warranty_Completed_Reports_List_Table extends WP_List_Table {
 
 	/**
 	 * [column_customer description]
+	 *
 	 * @param  [type] $item [description]
 	 * @return [type]       [description]
 	 */
@@ -162,6 +170,7 @@ class Warranty_Completed_Reports_List_Table extends WP_List_Table {
 	}
 	/**
 	 * [column_product description]
+	 *
 	 * @param  [type] $item [description]
 	 * @return [type]       [description]
 	 */
@@ -188,6 +197,7 @@ class Warranty_Completed_Reports_List_Table extends WP_List_Table {
 
 	/**
 	 * [column_validity description]
+	 *
 	 * @param  [type] $item [description]
 	 * @return [type]       [description]
 	 */
@@ -226,9 +236,10 @@ class Warranty_Completed_Reports_List_Table extends WP_List_Table {
 			}
 		}
 	}
-	
+
 	/**
 	 * [column_date description]
+	 *
 	 * @param  [type] $item [description]
 	 * @return [type]       [description]
 	 */

@@ -1,6 +1,7 @@
 <?php
 /**
  * [warranty_get_variation_string description]
+ *
  * @param  [type] $order [description]
  * @param  [type] $item  [description]
  * @return [type]        [description]
@@ -49,6 +50,7 @@ function warranty_get_variation_string( $order, $item ) {
 }
 /**
  * [warranty_return_shipping_tracking_code_form description]
+ *
  * @param  [type] $request [description]
  * @return [type]          [description]
  */
@@ -133,6 +135,7 @@ function warranty_return_shipping_tracking_code_form( $request ) {
 }
 /**
  * [warranty_request_shipping_tracking_code_form description]
+ *
  * @param  [type] $request [description]
  * @return [type]          [description]
  */
@@ -177,6 +180,7 @@ function warranty_request_shipping_tracking_code_form( $request ) {
 }
 /**
  * [warranty_stripslashes description]
+ *
  * @param  [type] $value [description]
  * @return [type]        [description]
  */
@@ -185,6 +189,7 @@ function warranty_stripslashes( $value ) {
 }
 /**
  * [warranty_get_order_item_warranty description]
+ *
  * @param  [type] $item [description]
  * @return [type]       [description]
  */
@@ -208,6 +213,7 @@ function warranty_get_order_item_warranty( $item ) {
 }
 /**
  * [warranty_get_warranty_duration_string description]
+ *
  * @param  [type] $warranty [description]
  * @param  [type] $order    [description]
  * @return [type]           [description]
@@ -636,6 +642,7 @@ function warranty_update_status( $warranty_id, $new_status ) {
 }
 /**
  * [warranty_get_completed_status description]
+ *
  * @return [type] [description]
  */
 function warranty_get_completed_status() {
@@ -708,6 +715,7 @@ function warranty_get_date( $order_date, $warranty_duration, $warranty_unit ) {
 }
 /**
  * [warranty_add_request_item description]
+ *
  * @param [type]  $request_id       [description]
  * @param [type]  $product_id       [description]
  * @param string  $order_item_index [description]
@@ -729,6 +737,7 @@ function warranty_add_request_item( $request_id, $product_id, $order_item_index 
 }
 /**
  * [warranty_get_request_items description]
+ *
  * @param  [type] $request_id [description]
  * @return [type]             [description]
  */
@@ -876,6 +885,7 @@ function warranty_update_request( $request_id, $data ) {
 }
 /**
  * [warranty_delete_request description]
+ *
  * @param  [type] $request_id [description]
  * @return [type]             [description]
  */
@@ -959,6 +969,7 @@ function warranty_load( $request_id ) {
 }
 /**
  * [warranty_get_product_title description]
+ *
  * @param  [type] $product_id [description]
  * @return [type]             [description]
  */
@@ -1442,6 +1453,7 @@ function warranty_add_order_note( $warranty_id ) {
 }
 /**
  * [warranty_get_tracking_data description]
+ *
  * @param  [type] $request_id [description]
  * @return [type]             [description]
  */

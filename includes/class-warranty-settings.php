@@ -38,6 +38,7 @@ class Warranty_Settings {
 	}
 	/**
 	 * [get_settings_fields description]
+	 *
 	 * @return [type] [description]
 	 */
 	public static function get_settings_fields() {
@@ -504,6 +505,7 @@ class Warranty_Settings {
 	}
 	/**
 	 * [update_warranty_emails description]
+	 *
 	 * @param  [type] $value [description]
 	 * @return [type]        [description]
 	 */
@@ -516,6 +518,7 @@ class Warranty_Settings {
 	}
 	/**
 	 * [update_permissions description]
+	 *
 	 * @param  [type] $value [description]
 	 * @return [type]        [description]
 	 */
@@ -528,6 +531,7 @@ class Warranty_Settings {
 	}
 	/**
 	 * [update_multi_status description]
+	 *
 	 * @param  [type] $value [description]
 	 * @return [type]        [description]
 	 */
@@ -540,6 +544,7 @@ class Warranty_Settings {
 	}
 	/**
 	 * [update_form_builder description]
+	 *
 	 * @param  [type] $value [description]
 	 * @return [type]        [description]
 	 */
@@ -552,6 +557,7 @@ class Warranty_Settings {
 	}
 	/**
 	 * [update_category_warranties description]
+	 *
 	 * @param  [type] $value [description]
 	 * @return [type]        [description]
 	 */
@@ -564,6 +570,7 @@ class Warranty_Settings {
 	}
 	/**
 	 * [update_default_addons description]
+	 *
 	 * @param  [type] $value [description]
 	 * @return [type]        [description]
 	 */
@@ -576,6 +583,7 @@ class Warranty_Settings {
 	}
 	/**
 	 * [warranty_emails_posted_value description]
+	 *
 	 * @param  [type] $value     [description]
 	 * @param  [type] $option    [description]
 	 * @param  [type] $raw_value [description]
@@ -590,6 +598,7 @@ class Warranty_Settings {
 	}
 	/**
 	 * [permissions_posted_value description]
+	 *
 	 * @param  [type] $value     [description]
 	 * @param  [type] $option    [description]
 	 * @param  [type] $raw_value [description]
@@ -604,6 +613,7 @@ class Warranty_Settings {
 	}
 	/**
 	 * [multi_status_posted_value description]
+	 *
 	 * @param  [type] $value     [description]
 	 * @param  [type] $option    [description]
 	 * @param  [type] $raw_value [description]
@@ -618,6 +628,7 @@ class Warranty_Settings {
 	}
 	/**
 	 * [form_builder_posted_value description]
+	 *
 	 * @param  [type] $value     [description]
 	 * @param  [type] $option    [description]
 	 * @param  [type] $raw_value [description]
@@ -632,6 +643,7 @@ class Warranty_Settings {
 	}
 	/**
 	 * [default_addons_posted_value description]
+	 *
 	 * @param  [type] $value     [description]
 	 * @param  [type] $option    [description]
 	 * @param  [type] $raw_value [description]
@@ -646,6 +658,7 @@ class Warranty_Settings {
 	}
 	/**
 	 * [warranty_emails_table description]
+	 *
 	 * @param  [type] $value [description]
 	 * @return [type]        [description]
 	 */
@@ -678,6 +691,7 @@ class Warranty_Settings {
 	}
 	/**
 	 * [warranty_multi_status_field description]
+	 *
 	 * @param  [type] $value [description]
 	 * @return [type]        [description]
 	 */
@@ -750,6 +764,7 @@ class Warranty_Settings {
 	}
 	/**
 	 * [form_builder description]
+	 *
 	 * @param  [type] $value [description]
 	 * @return [type]        [description]
 	 */
@@ -794,6 +809,7 @@ class Warranty_Settings {
 	}
 	/**
 	 * [permissions_table description]
+	 *
 	 * @param  [type] $value [description]
 	 * @return [type]        [description]
 	 */
@@ -808,6 +824,7 @@ class Warranty_Settings {
 	}
 	/**
 	 * [warranty_addons_table description]
+	 *
 	 * @param  [type] $value [description]
 	 * @return [type]        [description]
 	 */
@@ -819,6 +836,7 @@ class Warranty_Settings {
 	}
 	/**
 	 * [warranty_categories_table description]
+	 *
 	 * @param  [type] $value [description]
 	 * @return [type]        [description]
 	 */
@@ -942,6 +960,7 @@ class Warranty_Settings {
 	}
 	/**
 	 * [warranty_logo_field description]
+	 *
 	 * @param  [type] $value [description]
 	 * @return [type]        [description]
 	 */
@@ -1001,6 +1020,7 @@ class Warranty_Settings {
 	}
 	/**
 	 * [get_warranty_emails_from_post description]
+	 *
 	 * @return [type] [description]
 	 */
 	public static function get_warranty_emails_from_post() {
@@ -1046,6 +1066,7 @@ class Warranty_Settings {
 	}
 	/**
 	 * [get_warranty_permissions_from_post description]
+	 *
 	 * @return [type] [description]
 	 */
 	public static function get_warranty_permissions_from_post() {
