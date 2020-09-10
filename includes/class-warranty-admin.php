@@ -131,7 +131,7 @@ if ( ! class_exists( 'Warranty_Admin' ) ) :
 				wp_enqueue_style( 'select2' );
 				wp_enqueue_script( 'wc-enhanced-select' );
 
-				wp_enqueue_script( 'user-email-search', plugins_url( 'assets/js/user-email-search.js', WooCommerce_Warranty::$plugin_file ), array( 'wc-enhanced-select' ) );
+				wp_enqueue_script( 'user-email-search', plugins_url( 'assets/js/user-email-search.min.js', WooCommerce_Warranty::$plugin_file ), array( 'wc-enhanced-select' ) );
 
 				add_thickbox();
 				wp_enqueue_media();
@@ -172,7 +172,7 @@ if ( ! class_exists( 'Warranty_Admin' ) ) :
 
 			if ( isset( $_GET['page'] ) ) {
 				if ( $_GET['page'] == 'warranties' ) {
-					wp_enqueue_script( 'warranties_list', plugins_url( 'assets/js/list.js', WooCommerce_Warranty::$plugin_file ), array( 'jquery' ) );
+					wp_enqueue_script( 'warranties_list', plugins_url( 'assets/js/list.min.js', WooCommerce_Warranty::$plugin_file ), array( 'jquery' ) );
 				}
 
 				if ( in_array( $_GET['page'], $pages ) ) {
@@ -180,7 +180,7 @@ if ( ! class_exists( 'Warranty_Admin' ) ) :
 
 					wp_enqueue_script( 'jquery-ui' );
 					wp_enqueue_script( 'jquery-ui-sortable' );
-					wp_enqueue_script( 'warranty_form_builder', plugins_url( 'assets/js/form-builder.js', WooCommerce_Warranty::$plugin_file ) );
+					wp_enqueue_script( 'warranty_form_builder', plugins_url( 'assets/js/form-builder.min.js', WooCommerce_Warranty::$plugin_file ) );
 
 					$data = array(
 						'help_img_url' => plugins_url() . '/woocommerce/assets/images/help.png',
@@ -197,7 +197,7 @@ if ( ! class_exists( 'Warranty_Admin' ) ) :
 				add_thickbox();
 				wp_enqueue_media();
 				wp_enqueue_style( 'warranty_admin_css', plugins_url( 'assets/css/admin.css', WooCommerce_Warranty::$plugin_file ) );
-				wp_enqueue_script( 'warranty_shop_order', plugins_url( 'assets/js/orders.js', WooCommerce_Warranty::$plugin_file ), array( 'jquery' ) );
+				wp_enqueue_script( 'warranty_shop_order', plugins_url( 'assets/js/orders.min.js', WooCommerce_Warranty::$plugin_file ), array( 'jquery' ) );
 			}
 
 			wp_enqueue_style( 'wc-form-builder', plugins_url( 'assets/css/form-builder.css', WooCommerce_Warranty::$plugin_file ) );
@@ -219,7 +219,7 @@ if ( ! class_exists( 'Warranty_Admin' ) ) :
 				wp_enqueue_script( 'jquery-ui-progressbar', false, array( 'jquery', 'jquery-ui' ) );
 				wp_enqueue_script(
 					'warranty_data_updater',
-					plugins_url( '/assets/js/data-updater.js', WooCommerce_Warranty::$plugin_file ),
+					plugins_url( '/assets/js/data-updater.min.js', WooCommerce_Warranty::$plugin_file ),
 					array( 'jquery', 'jquery-ui-progressbar' )
 				);
 			}

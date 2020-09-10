@@ -62,7 +62,7 @@ class Warranty_Frontend {
 			$product = wc_get_product( $post->ID );
 
 			if ( $product && $product->is_type( 'variable' ) ) {
-				wp_enqueue_script( 'wc-warranty-variables', plugins_url( 'assets/js/variables.js', WooCommerce_Warranty::$plugin_file ), array( 'jquery' ) );
+				wp_enqueue_script( 'wc-warranty-variables', plugins_url( 'assets/js/variables.min.js', WooCommerce_Warranty::$plugin_file ), array( 'jquery' ) );
 				wp_localize_script(
 					'wc-warranty-variables',
 					'WC_Warranty',
