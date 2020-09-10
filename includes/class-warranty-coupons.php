@@ -3,14 +3,22 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-
+/**
+ * [Warranty_Coupons description]
+ */
 class Warranty_Coupons {
-
+	/**
+	 * [init description]
+	 * @return [type] [description]
+	 */
 	public static function init() {
 		// refund order item
 		add_action( 'admin_post_warranty_send_coupon', 'Warranty_Coupons::send_coupon' );
 	}
-
+	/**
+	 * [send_coupon description]
+	 * @return [type] [description]
+	 */
 	public static function send_coupon() {
 		global $wpdb;
 

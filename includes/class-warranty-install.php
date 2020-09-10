@@ -3,9 +3,13 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-
+/**
+ * [Warranty_Install description]
+ */
 class Warranty_Install {
-
+	/**
+	 * [__construct description]
+	 */
 	public function __construct() {
 		// update notice
 		add_action( 'admin_print_styles', array( $this, 'add_notices' ) );
@@ -215,7 +219,10 @@ class Warranty_Install {
 			update_option( 'warranty_db_version', '20160506' );
 		}
 	}
-
+	/**
+	 * [create_warranty_request_page description]
+	 * @return [type] [description]
+	 */
 	public function create_warranty_request_page() {
 
 		if ( ! get_option( 'woocommerce_warranty_page_id' ) ) {
@@ -265,7 +272,10 @@ class Warranty_Install {
 			}
 		}
 	}
-
+	/**
+	 * [create_options description]
+	 * @return [type] [description]
+	 */
 	public function create_options() {
 		if ( false == get_option( 'warranty_show_rma_button', false ) ) {
 			$options = array(
@@ -291,7 +301,10 @@ class Warranty_Install {
 			}
 		}
 	}
-
+	/**
+	 * [create_tables description]
+	 * @return [type] [description]
+	 */
 	public function create_tables() {
 		global $wpdb;
 
@@ -325,7 +338,10 @@ class Warranty_Install {
 
 		dbDelta( $tables );
 	}
-
+	/**
+	 * [install_statuses description]
+	 * @return [type] [description]
+	 */
 	private function install_statuses() {
 		$warranty_status = apply_filters(
 			'wc_warranty_statuses',

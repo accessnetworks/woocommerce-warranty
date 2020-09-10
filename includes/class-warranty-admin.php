@@ -1013,7 +1013,11 @@ if ( ! class_exists( 'Warranty_Admin' ) ) :
 			exit;
 
 		}
-
+		/**
+		 * [csv_import_fields description]
+		 * @param  [type] $fields [description]
+		 * @return [type]         [description]
+		 */
 		public function csv_import_fields( $fields ) {
 			$fields['_warranty_type']     = 'meta:_warranty_type';
 			$fields['_warranty_duration'] = 'meta:_warranty_duration';
@@ -1900,7 +1904,11 @@ if ( ! class_exists( 'Warranty_Admin' ) ) :
 				include WooCommerce_Warranty::$base_path . '/templates/admin/order-item-warranty.php';
 			}
 		}
-
+		/**
+		 * [hidden_order_item_meta description]
+		 * @param  [type] $hidden_meta [description]
+		 * @return [type]              [description]
+		 */
 		public function hidden_order_item_meta( $hidden_meta ) {
 			$hidden_meta[] = '_item_warranty_needs_index';
 			$hidden_meta[] = '_item_warranty_selected';
@@ -1947,7 +1955,11 @@ if ( ! class_exists( 'Warranty_Admin' ) ) :
 				}
 			}
 		}
-
+		/**
+		 * [add_addon_price_to_line_item description]
+		 * @param [type] $order_id [description]
+		 * @param [type] $items    [description]
+		 */
 		public function add_addon_price_to_line_item( $order_id, $items ) {
 			$added = 0;
 

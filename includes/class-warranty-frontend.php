@@ -3,7 +3,9 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-
+/**
+ * [Warranty_Frontend description]
+ */
 class Warranty_Frontend {
 
 	/**

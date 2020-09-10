@@ -3,9 +3,13 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-
+/**
+ * [Warranty_Cart description]
+ */
 class Warranty_Cart {
-
+	/**
+	 * [__construct description]
+	 */
 	public function __construct() {
 		add_action( 'woocommerce_before_add_to_cart_button', array( $this, 'show_product_warranty' ) );
 		add_filter( 'woocommerce_add_cart_item_data', array( $this, 'add_cart_item_data' ), 10, 2 );

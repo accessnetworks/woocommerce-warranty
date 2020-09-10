@@ -3,7 +3,9 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-
+/**
+ * [Warranty_Ajax description]
+ */
 class Warranty_Ajax {
 
 	/**
