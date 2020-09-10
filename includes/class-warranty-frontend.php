@@ -3,26 +3,27 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
+
 /**
- * [Warranty_Frontend description]
+ * Warranty FrontEnd.
  */
 class Warranty_Frontend {
 
 	/**
-	 * Setup the class
+	 * Setup the class.
 	 */
 	public function __construct() {
 		$this->register_hooks();
 	}
 
 	/**
-	 * Register the frontend hooks
+	 * Register the frontend hooks.
 	 */
 	public function register_hooks() {
 		add_filter( 'body_class', array( $this, 'output_body_class' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'frontend_styles' ) );
 
-		// My Account
+		// My Account.
 		add_action( 'woocommerce_order_details_after_order_table', array( $this, 'show_request_button' ), 10, 1 );
 		add_filter( 'woocommerce_my_account_my_orders_actions', array( $this, 'my_orders_request_button' ), 10, 2 );
 
@@ -36,9 +37,9 @@ class Warranty_Frontend {
 	}
 
 	/**
-	 * Add woocommerce CSS classes to the <body> element of the Warranty pages
+	 * Add woocommerce CSS classes to the <body> element of the Warranty pages.
 	 *
-	 * @param array $classes
+	 * @param array $classes Classes.
 	 * @return array
 	 */
 	public function output_body_class( $classes ) {
@@ -51,7 +52,7 @@ class Warranty_Frontend {
 	}
 
 	/**
-	 * Register JS and CSS files
+	 * Register JS and CSS files.
 	 */
 	public function frontend_styles() {
 		global $post;
