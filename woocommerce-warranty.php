@@ -375,9 +375,9 @@ class WooCommerce_Warranty {
 	}
 
 	/**
-	 * [render_warranty_form description]
+	 * Render Warranty Form.
 	 *
-	 * @param  string $extra_key [description]
+	 * @param  string $extra_key Extra Key.
 	 * @return [type]            [description]
 	 */
 	public static function render_warranty_form( $extra_key = '' ) {
@@ -401,12 +401,12 @@ class WooCommerce_Warranty {
 	}
 
 	/**
-	 * [render_warranty_form_field description]
+	 * Render Warranty Form Field.
 	 *
-	 * @param  [type] $type      [description]
-	 * @param  [type] $key       [description]
-	 * @param  [type] $field     [description]
-	 * @param  string $extra_key [description]
+	 * @param  [type] $type      Type.
+	 * @param  [type] $key       Key.
+	 * @param  [type] $field     Field.
+	 * @param  string $extra_key Extra Key.
 	 * @return [type]            [description]
 	 */
 	public static function render_warranty_form_field( $type, $key, $field, $extra_key = '' ) {
@@ -622,7 +622,7 @@ class WooCommerce_Warranty {
 					$validate_file = wp_check_filetype_and_ext( $files['tmp_name'][ $key ], $filename );
 
 					// Check the file type, before we do anything further.
-					if ( '' == $validate_file['ext'] || '' == $validate_file['type'] ) {
+					if ( '' === $validate_file['ext'] || '' === $validate_file['type'] ) {
 						$errors[] = __( 'The file you selected is not permitted. Please select another.', 'wc_warranty' );
 						continue;
 					}
